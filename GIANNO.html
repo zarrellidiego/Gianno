@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gianno Cafetería | Café de especialidad y pastelería artesanal en Mataderos</title>
+<meta name="description" content="Gianno Cafetería: café de especialidad y pastelería artesanal en Mataderos, CABA. Tu pausa favorita, todos los días.">
+<meta property="og:title" content="Gianno Cafetería">
+<meta property="og:description" content="Café de especialidad y pastelería artesanal en Mataderos, CABA.">
+<meta property="og:image" content="foto.jpg">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --negro:#0c0a08;
+  --carbon:#171310;
+  --madera:#6b4a2f;
+  --dorado:#d8b886;
+  --crema:#f3e9d8;
+  --naranja:#e8782b;
+  --texto:#e9dfcf;
+  --suave:#a99c88;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--negro);color:var(--texto);font-family:var(--sans);font-weight:300;line-height:1.65;font-size:17px}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;color:var(--crema)}
+h2{font-size:clamp(34px,5vw,52px);margin-bottom:18px}
+
+/* NAV */
+header{position:sticky;top:0;z-index:20;background:rgba(12,10,8,.92);backdrop-filter:blur(8px);border-bottom:1px solid #2a221b}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav .marca{font-family:var(--serif);font-size:22px;letter-spacing:.28em;color:var(--dorado);text-decoration:none}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--texto);transition:color .2s}
+.nav ul a:hover{color:var(--dorado)}
+@media(max-width:640px){.nav ul li:not(:last-child){display:none}}
+
+/* HERO */
+.hero{min-height:calc(100svh - 64px);display:grid;place-items:center;text-align:center;padding:56px 0;
+  background:radial-gradient(ellipse at 50% 35%,#2a1d12 0%,var(--negro) 68%)}
+.hero img.logo{width:min(230px,56vw);margin:0 auto 34px;border-radius:50%;animation:entra 1s ease both}
+.hero h1{font-size:clamp(40px,7.4vw,84px);font-style:italic;font-weight:400;max-width:12em;margin:0 auto 18px;animation:entra 1s .15s ease both}
+.hero p{max-width:34em;margin:0 auto 34px;color:var(--suave);font-size:18px;animation:entra 1s .3s ease both}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;border:1px solid var(--dorado);color:var(--dorado);text-decoration:none;font-size:15px;letter-spacing:.06em;border-radius:2px;transition:background .2s,color .2s}
+.btn:hover{background:var(--dorado);color:var(--negro)}
+.btn.lleno{background:var(--dorado);color:var(--negro)}
+.btn.lleno:hover{background:var(--crema);border-color:var(--crema)}
+
+section{padding:96px 0}
+.alt{background:var(--carbon)}
+.intro{color:var(--suave);max-width:36em;margin-bottom:44px}
+
+/* QUÉ HAY */
+.lista{border-top:1px solid #2f261d}
+.fila{display:grid;grid-template-columns:minmax(150px,.8fr) 2fr;gap:24px;padding:26px 0;border-bottom:1px solid #2f261d;align-items:baseline}
+.fila h3{font-size:30px;color:var(--dorado)}
+.fila p{color:var(--texto)}
+.sg{display:inline-block;margin-left:8px;font-family:var(--sans);font-size:13px;background:var(--naranja);color:var(--negro);padding:1px 9px;border-radius:20px;vertical-align:middle;font-weight:500}
+@media(max-width:640px){.fila{grid-template-columns:1fr;gap:4px}}
+
+/* EL LUGAR */
+.lugar{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.lugar p+p{margin-top:14px}
+.frase{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--dorado);margin-top:26px;line-height:1.3}
+@media(max-width:760px){.lugar{grid-template-columns:1fr;gap:32px}}
+
+/* VIDEOS */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;justify-items:center}
+.videos iframe,.videos video{width:100%;max-width:340px;height:520px;border:1px solid #2f261d;border-radius:4px;background:#000;object-fit:cover}
+.vacio{border:1px dashed var(--madera);padding:44px 28px;text-align:center;color:var(--suave);max-width:520px;margin:0 auto}
+.vacio p{margin-bottom:20px}
+
+/* VISITANOS */
+.datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;margin-bottom:44px}
+.datos h3{font-size:26px;color:var(--dorado);margin-bottom:6px}
+.datos p{color:var(--texto)}
+.datos a{color:var(--dorado)}
+.mapa{width:100%;height:340px;border:0;border-radius:2px;filter:grayscale(.6) invert(.92) contrast(.9)}
+
+footer{padding:40px 0;border-top:1px solid #2a221b;text-align:center;color:var(--suave);font-size:14px}
+footer .marca{font-family:var(--serif);letter-spacing:.3em;color:var(--dorado);font-size:20px;display:block;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="marca" href="#inicio">GIANNO</a>
+    <ul>
+      <li><a href="#carta">Qué hay</a></li>
+      <li><a href="#lugar">El lugar</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#visitanos">Visitanos</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero" style="padding:56px 0">
+  <div class="wrap">
+    <img class="logo" src="logo.png" alt="Gianno Cafetería">
+    <h1>Tu pausa favorita, todos los días</h1>
+    <p>Café de especialidad y pastelería artesanal en Mataderos. Un espacio cálido para desconectar y disfrutar.</p>
+    <div class="btns">
+      <a class="btn lleno" id="btn-carta" href="#carta">Ver qué hay</a>
+      <a class="btn" href="#visitanos">Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<section id="carta" class="alt">
+  <div class="wrap">
+    <h2>Qué hay en Gianno</h2>
+    <p class="intro">Todo lo que sale de nuestra cocina y de nuestra barra, para cualquier hora del día.</p>
+    <div class="lista">
+      <div class="fila"><h3>Café de especialidad</h3><p>Espresso, cortado, flat white y latte con sabores: vainilla, dulce de leche y más.</p></div>
+      <div class="fila"><h3>Pastelería artesanal</h3><p>Tortas, cheesecake de frutos rojos, medialunas y croissants hechos para acompañar tu café.</p></div>
+      <div class="fila"><h3>Para comer algo</h3><p>Tostados de jamón y queso, avocado toast, waffles y opciones saladas para el desayuno, la merienda o un almuerzo liviano.</p></div>
+      <div class="fila"><h3>Sin gluten <span class="sg">SIN TACC</span></h3><p>Opciones artesanales y locales sin gluten, como el lemon pie de merengue.</p></div>
+      <div class="fila"><h3>Para tomar</h3><p>Limonadas, jugos, mimosas y bebidas frías para cuando el café no alcanza.</p></div>
+    </div>
+    <div class="btns" style="margin-top:40px;justify-content:flex-start">
+      <a class="btn" id="btn-carta-completa" href="#" target="_blank" rel="noopener">Ver carta completa</a>
+    </div>
+  </div>
+</section>
+
+<section id="lugar">
+  <div class="wrap lugar">
+    <img src="foto.jpg" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" loading="lazy">
+    <div>
+      <h2>Un lugar para quedarse</h2>
+      <p>Mesas con sol, plantas, buena música y tiempo. Gianno es una cafetería de barrio donde podés venir a trabajar, charlar o no hacer nada.</p>
+      <p>Cada día elaboramos pastelería artesanal y la acompañamos con café de especialidad, preparado al momento.</p>
+      <p class="frase">Los días comienzan mejor con calma.</p>
+    </div>
+  </div>
+</section>
+
+<section id="videos" class="alt">
+  <div class="wrap">
+    <h2>Mirá lo que pasa en Gianno</h2>
+    <p class="intro">Algunos de nuestros videos de Instagram.</p>
+    <div class="videos" id="videos-grid"></div>
+  </div>
+</section>
+
+<section id="visitanos">
+  <div class="wrap">
+    <h2>Visitanos</h2>
+    <div class="datos">
+      <div><h3>Dónde estamos</h3><p id="direccion"></p><p><a id="link-mapa" href="#" target="_blank" rel="noopener">Abrir en Google Maps</a></p></div>
+      <div><h3>Horarios</h3><p id="horarios"></p></div>
+      <div><h3>Contacto</h3><p><a id="link-ig" href="#" target="_blank" rel="noopener"></a></p><p id="wsp-wrap"><a id="link-wsp" href="#" target="_blank" rel="noopener">Escribinos por WhatsApp</a></p></div>
+    </div>
+    <iframe class="mapa" id="mapa" title="Mapa de Gianno Cafetería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="marca">GIANNO</span>
+  Cafetería · Mataderos, CABA
+</footer>
+
+<script>
+/* ========= EDITÁ SOLO ESTO ========= */
+const CONFIG = {
+  direccion: "Mataderos, CABA",                 // poné la calle y altura cuando la tengas
+  horarios: "Lunes a domingo de 9 a 21 hs",     // confirmá los horarios
+  instagram: "giannocafeteriaok",
+  whatsapp: "",                                  // ej: "5491112345678" (si lo dejás vacío, no se muestra)
+  cartaUrl: "",                                  // link de Drive/PDF de la carta (si está vacío, el botón se oculta)
+  mapaBusqueda: "Gianno Cafetería Mataderos CABA",
+
+  /* Videos de Instagram: pegá el código del reel/post.
+     Ej: instagram.com/reel/ABC123xyz/  →  { tipo: "ig", id: "ABC123xyz" }
+     También podés subir un video al repo: { tipo: "mp4", src: "video1.mp4" } */
+  videos: [
+    // { tipo: "ig", id: "ABC123xyz" },
+    // { tipo: "mp4", src: "video1.mp4" },
+  ]
+};
+/* =================================== */
+
+const $ = id => document.getElementById(id);
+const igUrl = "https://www.instagram.com/" + CONFIG.instagram + "/";
+$("direccion").textContent = CONFIG.direccion;
+$("horarios").textContent = CONFIG.horarios;
+$("link-ig").href = igUrl;
+$("link-ig").textContent = "@" + CONFIG.instagram;
+const q = encodeURIComponent(CONFIG.mapaBusqueda);
+$("link-mapa").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+$("mapa").src = "https://www.google.com/maps?q=" + q + "&output=embed";
+
+if (CONFIG.whatsapp) $("link-wsp").href = "https://wa.me/" + CONFIG.whatsapp;
+else $("wsp-wrap").style.display = "none";
+
+if (CONFIG.cartaUrl) $("btn-carta-completa").href = CONFIG.cartaUrl;
+else $("btn-carta-completa").style.display = "none";
+
+const grid = $("videos-grid");
+if (CONFIG.videos.length) {
+  CONFIG.videos.forEach(v => {
+    let el;
+    if (v.tipo === "ig") {
+      el = document.createElement("iframe");
+      el.src = "https://www.instagram.com/reel/" + v.id + "/embed";
+      el.title = "Video de Instagram de Gianno";
+      el.loading = "lazy";
+      el.allowFullscreen = true;
+    } else {
+      el = document.createElement("video");
+      el.src = v.src; el.controls = true; el.playsInline = true; el.preload = "metadata";
+    }
+    grid.appendChild(el);
+  });
+} else {
+  grid.innerHTML = '<div class="vacio"><p>Mirá todos nuestros videos, tortas y novedades en Instagram.</p><a class="btn lleno" href="' + igUrl + '" target="_blank" rel="noopener">Ver @' + CONFIG.instagram + '</a></div>';
+}
+</script>
+</body>
+</html>
