@@ -47,8 +47,8 @@ nav a:hover,nav a.act{border-color:var(--fruto)}
 .estado.cerrado{background:var(--latte)}.estado.cerrado i{background:var(--cacao)}
 .hero h1{font:700 clamp(3rem,8vw,5.6rem)/.98 var(--serif);letter-spacing:-.025em}
 .hero .lead{max-width:36ch;margin:24px 0 32px;font-size:1.2rem;color:var(--cacao)}
-.foto-wrap{position:relative}
-.hero-foto{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.foto-wrap{position:relative;max-width:350px;width:100%;margin:0 auto}
+.hero-foto{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:36px}
 .foto-wrap::after{content:"";position:absolute;z-index:-1;inset:22px -16px -16px 22px;border-radius:28px;background:var(--latte)}
 .js .hero-grid>*{animation:sube .8s cubic-bezier(.2,.7,.2,1) both}.js .hero-grid>*:last-child{animation-delay:.15s}
 @keyframes sube{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
@@ -61,12 +61,23 @@ nav a:hover,nav a.act{border-color:var(--fruto)}
 .datos b{font:600 1.15rem/1.3 var(--serif)}
 
 .fav{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px}
-.fav img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;margin-bottom:12px;transition:transform .4s}
+.fav img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;margin-bottom:12px;transition:transform .4s}
 .fav figure:hover img{transform:translateY(-4px)}
 .fav figure:nth-child(3n+2){margin-top:36px}
 .fav figcaption{font:700 1.3rem/1.2 var(--serif)}
 .fav small{display:block;font:400 .95rem var(--sans);color:var(--cacao)}
 
+.fb{position:relative;overflow:hidden;display:grid;place-items:center;border-radius:20px;background:var(--bg,#ecd9bf)}
+.fb svg{width:66%;height:auto;overflow:visible}
+.fav .fb{width:100%;aspect-ratio:1;margin-bottom:12px}
+.steam path{fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;opacity:0;animation:vapor 2.8s ease-in infinite}
+.steam path:nth-child(2){animation-delay:.9s}.steam path:nth-child(3){animation-delay:1.8s}
+@keyframes vapor{0%{opacity:0;transform:translateY(14px)}35%{opacity:.9}100%{opacity:0;transform:translateY(-24px)}}
+.flota{animation:flota 3.4s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-7px)}}
+.burb circle{opacity:0;animation:burb 2.6s ease-in infinite}
+.burb circle:nth-child(2){animation-delay:.8s}.burb circle:nth-child(3){animation-delay:1.6s}
+@keyframes burb{0%{opacity:0;transform:translateY(8px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-42px)}}
 .alt{background:var(--latte)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
 .chip{font:inherit;font-weight:500;font-size:.95rem;cursor:pointer;background:transparent;color:var(--espresso);border:2px solid var(--espresso);border-radius:999px;padding:8px 18px;min-height:42px;transition:background .2s,color .2s}
@@ -84,7 +95,7 @@ nav a:hover,nav a.act{border-color:var(--fruto)}
 .alt .btn{margin-top:22px}
 
 .lugar{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.lugar img{width:100%;max-width:460px;aspect-ratio:1;object-fit:cover;border-radius:28px}.lugar .fb{max-width:460px;aspect-ratio:1;border-radius:28px}
 .lugar p+p{margin-top:14px}
 .frase{font:italic 500 1.9rem/1.25 var(--serif);color:var(--fruto);margin-top:30px}
 
@@ -139,7 +150,7 @@ iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 2
         </div>
       </div>
       <div class="foto-wrap">
-        <img class="hero-foto" src="foto.jpg" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" width="900" height="1125" fetchpriority="high">
+        <img class="hero-foto" src="foto.jpg" data-fb="hero" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" width="900" height="1125" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -160,12 +171,12 @@ iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 2
       <h2>Lo que más se pide</h2>
       <p class="sub">Elegí un café y una porción: los dúos perfectos.</p>
       <div class="fav">
-        <figure><img src="g1.jpg" alt="Waffle con frutos rojos, crema y chocolate" loading="lazy"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
-        <figure><img src="g2.jpg" alt="Latte de vainilla en vaso alto" loading="lazy"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
-        <figure><img src="g4.jpg" alt="Café y croissant de chocolate sobre un diario" loading="lazy"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
-        <figure><img src="g6.jpg" alt="Cheesecake de frutos rojos" loading="lazy"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
-        <figure><img src="g7.jpg" alt="Torta Oreo con crema" loading="lazy"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
-        <figure><img src="g3.jpg" alt="Jugo de naranja con una tostada" loading="lazy"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
+        <figure><img src="g1.jpg" data-fb="waffle" alt="Waffle con frutos rojos, crema y chocolate"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
+        <figure><img src="g2.jpg" data-fb="glass2" alt="Latte de vainilla en vaso alto"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
+        <figure><img src="g4.jpg" data-fb="cup" alt="Café y croissant de chocolate sobre un diario"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
+        <figure><img src="g6.jpg" data-fb="cake" alt="Cheesecake de frutos rojos"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
+        <figure><img src="g7.jpg" data-fb="cake2" alt="Torta Oreo con crema"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
+        <figure><img src="g3.jpg" data-fb="glass" alt="Jugo de naranja con una tostada"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
       </div>
     </div>
   </section>
@@ -196,7 +207,7 @@ iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 2
 
   <section id="lugar">
     <div class="wrap lugar">
-      <img src="g5.jpg" alt="Taza de café sobre un plato, en una mesa de Gianno" loading="lazy">
+      <img src="g5.jpg" data-fb="cup2" alt="Taza de café sobre un plato, en una mesa de Gianno">
       <div>
         <h2>Un lugar para desconectar</h2>
         <p>Mesas con sol, plantas y buena música. Gianno es el lugar para venir a trabajar, charlar o no hacer nada.</p>
@@ -273,6 +284,16 @@ const CONFIG = {
   if(CONFIG.whatsapp){var w="https://wa.me/"+CONFIG.whatsapp;$("link-wsp").href=w;$("wsp-flotante").href=w}
   else{$("link-wsp").style.display="none";$("wsp-flotante").style.display="none"}
   if(CONFIG.cartaUrl)$("btn-carta").href=CONFIG.cartaUrl;else $("btn-carta").style.display="none";
+
+
+  var CUP='<svg viewBox="0 0 120 120"><g class="steam" style="color:#f3e6d3"><path d="M44 38c-7-8 7-12 0-24"/><path d="M60 38c-7-8 7-12 0-24"/><path d="M76 38c-7-8 7-12 0-24"/></g><g class="flota"><path d="M26 52h68v18a30 30 0 0 1-30 30h-8a30 30 0 0 1-30-30z" fill="#faf4e8"/><path d="M94 58h6a10 10 0 0 1 0 22h-8" fill="none" stroke="#faf4e8" stroke-width="7"/><ellipse cx="60" cy="52" rx="34" ry="6" fill="#8a5a3a"/></g><ellipse cx="60" cy="106" rx="46" ry="7" fill="#d8c3a5"/></svg>';
+  var CAKE=function(t){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M12 78L100 56v32L12 104z" fill="#f3d9b1"/><path d="M12 78L100 56v11L12 89z" fill="#fff"/><path d="M12 78L100 56 78 44 12 62z" fill="'+t+'"/><path d="M12 62L78 44l22 12" fill="none" stroke="#6b3b2a" stroke-width="3"/><circle cx="52" cy="48" r="8" fill="#a8233f"/><path d="M52 40q4-8 10-8" fill="none" stroke="#3d7a3a" stroke-width="3" stroke-linecap="round"/></g></svg>'};
+  var WAF='<svg viewBox="0 0 120 120"><g class="steam" style="color:#fff"><path d="M44 30c-7-8 7-12 0-22"/><path d="M62 30c-7-8 7-12 0-22"/><path d="M80 30c-7-8 7-12 0-22"/></g><g class="flota"><rect x="20" y="36" width="80" height="72" rx="14" fill="#e0a95a"/><path d="M47 36v72M73 36v72M20 62h80M20 86h80" stroke="#b9782e" stroke-width="4"/><circle cx="46" cy="48" r="9" fill="#a8233f"/><circle cx="68" cy="46" r="8" fill="#c43a58"/><circle cx="84" cy="54" r="7" fill="#a8233f"/><path d="M30 72q12 14 26 0t28 6" fill="none" stroke="#4a2616" stroke-width="5" stroke-linecap="round"/></g></svg>';
+  var GLASS=function(c,t){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M34 30h52l-6 76H40z" fill="'+c+'"/><path d="M34 30h52l-1 14H35z" fill="'+t+'"/><path d="M70 32l12-24" stroke="#a8233f" stroke-width="5" stroke-linecap="round"/><g class="burb" fill="#fff"><circle cx="52" cy="92" r="4"/><circle cx="68" cy="96" r="3"/><circle cx="58" cy="86" r="3"/></g></g></svg>'};
+  var FB={hero:["#3a2418",CUP],cup:["#3a2418",CUP],cup2:["#3a2418",CUP],waffle:["#f5d9a6",WAF],glass:["#fbd8a0",GLASS("#f59a2c","#ffd27a")],glass2:["#e9dcc6",GLASS("#c99a6b","#f6ead6")],cake:["#f4cdd3",CAKE("#e7a9b3")],cake2:["#d9c6b8",CAKE("#4a2c22")]};
+  document.querySelectorAll("img[data-fb]").forEach(function(im){
+    function swap(){var f=FB[im.getAttribute("data-fb")]||FB.cup,d=document.createElement("div");d.className="fb "+im.className;d.style.setProperty("--bg",f[0]);d.setAttribute("role","img");d.setAttribute("aria-label",im.alt);d.innerHTML=typeof f[1]==="function"?f[1]():f[1];if(im.parentNode)im.parentNode.replaceChild(d,im)}
+    im.addEventListener("error",swap);if(im.complete&&!im.naturalWidth)swap()});
 
   var g=$("videos-grid");
   if(CONFIG.videos.length){CONFIG.videos.forEach(function(v){var e;
