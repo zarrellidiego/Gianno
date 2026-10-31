@@ -134,7 +134,25 @@ footer b{font:800 1.4rem var(--serif);color:var(--vino)}
 @keyframes burb{0%{opacity:0;transform:translateY(8px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-42px)}}
 .js .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
+/* barra de progreso */
+.progreso{position:fixed;top:0;left:0;right:0;height:4px;z-index:50;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--rosa),var(--cara),var(--rosa));pointer-events:none}
+/* botón subir */
+.subir{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:19;width:48px;height:48px;border-radius:50%;border:2px solid var(--crema);background:var(--rosa);color:var(--vino2);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;transform:translateY(16px) scale(.8);pointer-events:none;transition:opacity .3s,transform .3s,background .2s;-webkit-tap-highlight-color:transparent}
+.subir.ver{opacity:1;transform:none;pointer-events:auto}
+.subir:hover{background:var(--crema)}
+.subir:active{transform:scale(.9)}
+.subir.ver:hover svg{transform:translateY(-2px)}
+.subir svg{transition:transform .2s}
+/* créditos */
+.creditos{font-size:.88rem;margin-top:2px}
+.creditos a{display:inline-flex;align-items:center;gap:4px;color:var(--vino);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;transition:color .2s,transform .2s}
+.creditos a svg{transition:transform .2s}
+.creditos a:hover{color:var(--vino2)}
+.creditos a:hover svg{transform:translate(2px,-2px)}
+.creditos a:active{transform:scale(.96)}
+@media(prefers-reduced-motion:reduce){.progreso{display:none}}
 @media(max-width:800px){
+.subir{right:14px;bottom:calc(78px + env(safe-area-inset-bottom,0px))}
 body{font-size:16px}section{padding:52px 0}
 header.top .wrap{flex-direction:column;height:auto;gap:0;padding-top:8px}
 nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(.7rem,3.4vw,.86rem)}nav a{padding:10px 3px 12px}
@@ -255,7 +273,8 @@ nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(.7rem,3.4vw,.
   </div></section>
 </main>
 
-<footer><div class="wrap"><b>Gianno Cafetería</b><span>Mataderos, CABA</span><a id="pie-ig" href="#" target="_blank" rel="noopener"></a><span>© 2026 Gianno Cafetería</span></div></footer>
+<footer><div class="wrap"><b>Gianno Cafetería</b><span>Mataderos, CABA</span><a id="pie-ig" href="#" target="_blank" rel="noopener"></a><span>© 2026 Gianno Cafetería</span><span class="creditos">Maqueta creada por <a href="https://wa.me/5491135679728?text=Hola%20Diego!%20Vi%20la%20maqueta%20de%20Gianno%20Cafeter%C3%ADa" target="_blank" rel="noopener">Diego Zarrelli<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></span></div></footer>
+<button class="subir" type="button" aria-label="Volver arriba"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <a class="wsp" id="wsp-flotante" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4z"/></svg>WhatsApp</a>
 
 <script>
@@ -334,6 +353,27 @@ const CONFIG = {
     Object.keys(links).forEach(function(k){var s=$(k);if(s)so.observe(s)});
   }else els.forEach(function(el){el.classList.add("in")});
   var hd=document.querySelector("header.top");addEventListener("scroll",function(){hd.classList.toggle("sc",pageYOffset>10)},{passive:true});
+})();
+</script>
+<script>
+(function(){
+  try{
+    var root=document.documentElement;
+    var bar=document.createElement("div");bar.className="progreso";bar.setAttribute("aria-hidden","true");document.body.appendChild(bar);
+    var btn=document.querySelector(".subir"),t=false;
+    function f(){
+      var y=window.pageYOffset||root.scrollTop,h=root.scrollHeight-window.innerHeight;
+      bar.style.setProperty("--p",h>0?Math.min(1,y/h).toFixed(4):0);
+      if(btn)btn.classList.toggle("ver",y>500);
+      t=false;
+    }
+    window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});
+    if(btn)btn.addEventListener("click",function(){
+      var r=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+      window.scrollTo({top:0,behavior:r?"auto":"smooth"});
+    });
+    f();
+  }catch(e){}
 })();
 </script>
 </body>
