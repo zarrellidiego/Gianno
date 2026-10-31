@@ -137,12 +137,21 @@ footer b{font:800 1.4rem var(--serif);color:var(--vino)}
 /* barra de progreso */
 .progreso{position:fixed;top:0;left:0;right:0;height:4px;z-index:50;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--rosa),var(--cara),var(--rosa));pointer-events:none}
 /* botón subir */
-.subir{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:19;width:48px;height:48px;border-radius:50%;border:2px solid var(--crema);background:var(--rosa);color:var(--vino2);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;transform:translateY(16px) scale(.8);pointer-events:none;transition:opacity .3s,transform .3s,background .2s;-webkit-tap-highlight-color:transparent}
+.subir{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:19;width:52px;height:52px;border-radius:50%;border:0;background:var(--papel);color:var(--vino);display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 22px rgba(69,16,31,.25);opacity:0;transform:translateY(24px) scale(.5);pointer-events:none;transition:opacity .3s,transform .5s cubic-bezier(.34,1.56,.64,1),background .25s,color .25s;-webkit-tap-highlight-color:transparent}
 .subir.ver{opacity:1;transform:none;pointer-events:auto}
-.subir:hover{background:var(--crema)}
+.subir .anillo{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.subir circle{fill:none;stroke-width:3}
+.subir .pista{stroke:var(--rosa)}
+.subir .valor{stroke:var(--cara);stroke-linecap:round;stroke-dasharray:132;stroke-dashoffset:132}
+.subir .flecha{position:relative}
+.subir:hover{background:var(--vino);color:var(--crema);transform:translateY(-3px) scale(1.06)}
+.subir:hover .flecha{animation:flechaLoop .9s ease-in-out infinite}
 .subir:active{transform:scale(.9)}
-.subir.ver:hover svg{transform:translateY(-2px)}
-.subir svg{transition:transform .2s}
+.subir.va{animation:cohete .6s cubic-bezier(.5,0,.2,1)}
+.subir.va .flecha{animation:flechaYa .6s ease-in}
+@keyframes flechaLoop{0%,100%{transform:none;opacity:1}45%{transform:translateY(-14px);opacity:0}46%{transform:translateY(14px);opacity:0}}
+@keyframes flechaYa{to{transform:translateY(-34px);opacity:0}}
+@keyframes cohete{40%{transform:translateY(8px) scale(.92)}100%{transform:translateY(-6px) scale(1)}}
 /* créditos */
 .creditos{font-size:.88rem;margin-top:2px}
 .creditos a{display:inline-flex;align-items:center;gap:4px;color:var(--vino);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;transition:color .2s,transform .2s}
@@ -274,7 +283,7 @@ nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(.7rem,3.4vw,.
 </main>
 
 <footer><div class="wrap"><b>Gianno Cafetería</b><span>Mataderos, CABA</span><a id="pie-ig" href="#" target="_blank" rel="noopener"></a><span>© 2026 Gianno Cafetería</span><span class="creditos">Maqueta creada por <a href="https://wa.me/5491135679728?text=Hola%20Diego!%20Vi%20la%20maqueta%20de%20Gianno%20Cafeter%C3%ADa" target="_blank" rel="noopener">Diego Zarrelli<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a></span></div></footer>
-<button class="subir" type="button" aria-label="Volver arriba"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="subir" type="button" aria-label="Volver arriba"><svg class="anillo" viewBox="0 0 48 48" aria-hidden="true"><circle class="pista" cx="24" cy="24" r="21"/><circle class="valor" cx="24" cy="24" r="21"/></svg><svg class="flecha" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <a class="wsp" id="wsp-flotante" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4z"/></svg>WhatsApp</a>
 
 <script>
@@ -359,18 +368,19 @@ const CONFIG = {
 (function(){
   try{
     var root=document.documentElement;
+    var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
     var bar=document.createElement("div");bar.className="progreso";bar.setAttribute("aria-hidden","true");document.body.appendChild(bar);
-    var btn=document.querySelector(".subir"),t=false;
+    var btn=document.querySelector(".subir"),ring=btn&&btn.querySelector(".valor"),t=false;
     function f(){
-      var y=window.pageYOffset||root.scrollTop,h=root.scrollHeight-window.innerHeight;
-      bar.style.setProperty("--p",h>0?Math.min(1,y/h).toFixed(4):0);
-      if(btn)btn.classList.toggle("ver",y>500);
+      var y=window.pageYOffset||root.scrollTop,h=root.scrollHeight-window.innerHeight,p=h>0?Math.min(1,y/h):0;
+      bar.style.setProperty("--p",p.toFixed(4));
+      if(btn){btn.classList.toggle("ver",y>500);ring.style.strokeDashoffset=(132*(1-p)).toFixed(1)}
       t=false;
     }
     window.addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(f)}},{passive:true});
     if(btn)btn.addEventListener("click",function(){
-      var r=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
-      window.scrollTo({top:0,behavior:r?"auto":"smooth"});
+      btn.classList.add("va");setTimeout(function(){btn.classList.remove("va")},650);
+      window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});
     });
     f();
   }catch(e){}
