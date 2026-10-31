@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#faf4e8">
+<meta name="theme-color" content="#6b1a32">
 <title>Gianno Cafetería | Café de especialidad y pastelería artesanal en Mataderos</title>
 <meta name="description" content="Gianno Cafetería: café de especialidad y pastelería artesanal en Mataderos, CABA. Tu pausa favorita, todos los días.">
 <meta property="og:type" content="website">
@@ -14,125 +14,144 @@
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--espresso:#2b1a12;--latte:#ecd9bf;--espuma:#faf4e8;--fruto:#a8233f;--cacao:#6f5848;--linea:rgba(43,26,18,.16);--serif:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,sans-serif}
+:root{--vino:#6b1a32;--vino2:#45101f;--crema:#f7eddc;--papel:#fff9ef;--rosa:#f2b8c0;--cara:#e8a252;--tinta:#2b1a14;--gris:#6d5a52;--r:20px;--serif:Fraunces,Georgia,serif;--script:Caveat,cursive}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--espuma);color:var(--espresso);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+body{font:400 17px/1.6 "Nunito Sans",system-ui,sans-serif;background:var(--crema);color:var(--tinta);overflow-x:hidden}
 img{max-width:100%;display:block}a{color:inherit}ul{list-style:none}
-:focus-visible{outline:3px solid var(--fruto);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-section{padding:96px 0;scroll-margin-top:64px}
-h2{font:700 clamp(2rem,5vw,3.2rem)/1.08 var(--serif);letter-spacing:-.01em;margin-bottom:14px}
-.sub{max-width:50ch;color:var(--cacao);margin-bottom:36px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 28px;border:2px solid var(--espresso);border-radius:999px;text-decoration:none;font-weight:600;transition:background .2s,color .2s,transform .15s}
-.btn:hover{background:var(--espresso);color:var(--espuma)}.btn:active{transform:scale(.97)}
-.btn.lleno{background:var(--fruto);border-color:var(--fruto);color:#fff}.btn.lleno:hover{background:var(--espresso);border-color:var(--espresso)}
+:focus-visible{outline:3px solid var(--cara);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:80px 0;scroll-margin-top:84px}
+.eyebrow{display:block;font:700 1.7rem/1 var(--script);color:var(--vino);margin-bottom:6px}
+h2{font:800 clamp(2rem,5vw,3.1rem)/1.05 var(--serif);color:var(--vino);margin-bottom:14px}
+.sub{max-width:52ch;margin-bottom:34px;color:var(--gris)}
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 26px;border:2px solid var(--vino);border-radius:999px;color:var(--vino);font-weight:700;text-decoration:none;transition:background .2s,color .2s,transform .15s}
+.btn::after{content:"";position:absolute;inset:0 auto 0 -60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s;z-index:-1}
+.btn:hover::after{left:130%}.btn:hover{background:var(--vino);color:var(--crema)}.btn:active{transform:scale(.96)}
+.btn.lleno{background:var(--vino);color:var(--crema)}.btn.lleno:hover{background:var(--vino2);border-color:var(--vino2)}
+.on-dark .btn,.hero .btn{border-color:var(--crema);color:var(--crema)}
+.on-dark .btn:hover,.hero .btn:hover{background:var(--crema);color:var(--vino2)}
+.on-dark .btn.lleno,.hero .btn.lleno{background:var(--crema);color:var(--vino2)}
+.on-dark .btn.lleno:hover,.hero .btn.lleno:hover{background:var(--rosa);border-color:var(--rosa)}
 .acciones{display:flex;flex-wrap:wrap;gap:12px}
 
-header.top{position:sticky;top:0;z-index:20;background:rgba(250,244,232,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+header.top{position:sticky;top:0;z-index:20;background:var(--crema);border-bottom:2px solid var(--vino);transition:box-shadow .3s}
+header.top.sc{box-shadow:0 8px 24px rgba(69,16,31,.18)}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.45rem var(--serif)}
-.logo img{width:40px;height:40px;border-radius:50%}
-nav{display:flex;gap:26px;font-weight:500;font-size:.96rem}
-nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
-nav a:hover,nav a.act{border-color:var(--fruto)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.6rem var(--serif);color:var(--vino)}
+.logo img{width:42px;height:42px;border-radius:50%}
+nav{display:flex;gap:24px;font-weight:700;font-size:.95rem}
+nav a{position:relative;text-decoration:none;padding:6px 0 9px}
+nav a::after{content:"";position:absolute;inset:auto 0 0;height:4px;border-radius:4px;background:var(--cara);transform:scaleX(0);transition:transform .35s}
+nav a:hover::after{transform:scaleX(.45)}nav a.act::after{transform:scaleX(1)}
 
-.hero{padding:56px 0 72px}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.estado{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;background:#dcebd3;font-size:.92rem;font-weight:500;margin-bottom:24px}
-.estado i{width:9px;height:9px;border-radius:50%;background:#2f8a46}
-.estado.pronto{background:#f6e3b4}.estado.pronto i{background:#c98a0b}
-.estado.cerrado{background:var(--latte)}.estado.cerrado i{background:var(--cacao)}
-.hero h1{font:700 clamp(3rem,8vw,5.6rem)/.98 var(--serif);letter-spacing:-.025em}
-.hero .lead{max-width:36ch;margin:24px 0 32px;font-size:1.2rem;color:var(--cacao)}
-.foto-wrap{position:relative;max-width:350px;width:100%;margin:0 auto}
-.hero-foto{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:36px}
-.foto-wrap::after{content:"";position:absolute;z-index:-1;inset:22px -16px -16px 22px;border-radius:28px;background:var(--latte)}
-.js .hero-grid>*{animation:sube .8s cubic-bezier(.2,.7,.2,1) both}.js .hero-grid>*:last-child{animation-delay:.15s}
-@keyframes sube{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero{position:relative;overflow:hidden;color:var(--crema);padding:60px 0 110px;border-radius:0 0 44px 44px;background:radial-gradient(circle at 92% 6%,rgba(242,184,192,.22),transparent 45%),radial-gradient(circle at 4% 100%,rgba(0,0,0,.28),transparent 55%),var(--vino)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.estado{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1.5px solid rgba(127,214,143,.5);border-radius:999px;background:var(--vino2);font-weight:700;font-size:.92rem;margin-bottom:22px}
+.estado i{position:relative;width:10px;height:10px;border-radius:50%;background:#7fd68f}
+.estado i::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s ease-out infinite}
+.estado.pronto i{background:#ffc857}.estado.cerrado i{background:var(--rosa)}.estado.cerrado i::after{animation:none}
+@keyframes ping{from{transform:scale(1);opacity:.8}to{transform:scale(3.2);opacity:0}}
+.hero h1{font:800 clamp(4rem,14vw,8.4rem)/.9 var(--serif);letter-spacing:-.03em}
+.script{display:block;margin-top:2px;font:700 clamp(2rem,7vw,3.4rem) var(--script);color:var(--rosa)}
+.lead{max-width:32ch;margin:24px 0 28px;font-size:1.25rem}
+.foto-wrap{position:relative;max-width:380px;width:100%;margin:0 auto}
+.hero-foto{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;border:4px solid var(--crema);box-shadow:0 24px 48px rgba(0,0,0,.3)}
+.sello{position:absolute;right:-14px;top:-22px;width:108px;height:108px;border-radius:50%;background:var(--rosa);color:var(--vino2);display:grid;place-items:center;border:3px solid var(--crema);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.sello svg{position:absolute;inset:0;animation:gira 22s linear infinite}
+.sello text{font:800 10.5px "Nunito Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;fill:var(--vino2)}
+.sello b{font:800 1.8rem var(--serif)}
+@keyframes gira{to{transform:rotate(360deg)}}
+@keyframes sube{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.js .hero-grid>div:first-child>*{animation:sube .8s cubic-bezier(.2,.7,.2,1) both}
+.js .hero-grid>div:first-child>*:nth-child(2){animation-delay:.1s}.js .hero-grid>div:first-child>*:nth-child(3){animation-delay:.2s}.js .hero-grid>div:first-child>*:nth-child(4){animation-delay:.3s}.js .hero-grid>div:first-child>*:nth-child(5){animation-delay:.4s}
+.js .foto-wrap{animation:sube 1s .2s cubic-bezier(.2,.7,.2,1) both}
 
-.datos{border-block:1px solid var(--linea)}
-.datos ul{display:grid;grid-template-columns:repeat(4,1fr)}
-.datos li{padding:22px 20px;border-left:1px solid var(--linea)}
-.datos li:first-child{border-left:0;padding-left:0}
-.datos small{display:block;color:var(--cacao);font-size:.85rem}
-.datos b{font:600 1.15rem/1.3 var(--serif)}
+.datos{position:relative;z-index:2;margin-top:-56px}
+.datos ul{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.datos li{background:var(--papel);border:2px solid var(--vino);border-radius:var(--r);padding:16px 12px;text-align:center;box-shadow:0 12px 26px rgba(69,16,31,.16)}
+.datos small{display:block;font:700 1.35rem/1 var(--script);color:var(--vino)}
+.datos b{display:block;margin-top:4px;font:800 1.05rem/1.25 var(--serif);color:var(--vino2)}
+
+.cinta{overflow:hidden;padding:44px 0 8px}
+.cinta-in{margin:0 -4%;transform:rotate(-1.5deg);background:var(--cara);color:var(--vino2);padding:13px 0;overflow:hidden}
+.cinta-t{display:flex;width:max-content;white-space:nowrap;animation:cinta 36s linear infinite}
+.cinta-t span{font:italic 800 1.35rem var(--serif);padding:0 18px}
+@keyframes cinta{to{transform:translateX(-50%)}}
 
 .fav{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px}
-.fav img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;margin-bottom:12px;transition:transform .4s}
-.fav figure:hover img{transform:translateY(-4px)}
 .fav figure:nth-child(3n+2){margin-top:36px}
-.fav figcaption{font:700 1.3rem/1.2 var(--serif)}
-.fav small{display:block;font:400 .95rem var(--sans);color:var(--cacao)}
+.fimg{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--r);border:2px solid var(--vino);margin-bottom:12px}
+.fav figcaption{font:800 1.3rem/1.2 var(--serif);color:var(--vino)}
+.fav small{display:block;font:400 .95rem "Nunito Sans",sans-serif;color:var(--gris)}
 
-.fb{position:relative;overflow:hidden;display:grid;place-items:center;border-radius:20px;background:var(--bg,#ecd9bf)}
-.fb svg{width:66%;height:auto;overflow:visible}
-.fav .fb{width:100%;aspect-ratio:1;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{font:inherit;font-weight:700;font-size:.92rem;cursor:pointer;background:var(--papel);color:var(--vino);border:2px solid var(--vino);border-radius:999px;padding:8px 18px;min-height:42px;transition:background .2s,color .2s,transform .15s}
+.chip:active{transform:scale(.94)}.chip[aria-pressed="true"]{background:var(--vino);color:var(--crema)}
+.carta{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.bloque{background:var(--papel);border-radius:var(--r);padding:26px 24px;border-top:6px solid var(--vino)}
+.bloque[hidden]{display:none}.bloque:nth-child(even){border-top-color:var(--cara)}
+.bloque h3{font:800 1.4rem var(--serif);color:var(--vino);margin-bottom:10px}
+.bloque li{padding:7px 0;border-bottom:1px dashed #d9c7b0}.bloque li:last-child{border:0}
+.bloque small{display:block;color:var(--gris);line-height:1.4}
+.tacc{margin-left:8px;font:700 .75rem "Nunito Sans",sans-serif;background:var(--vino);color:var(--crema);padding:3px 10px;border-radius:99px;vertical-align:middle}
+.carta.pop .bloque:not([hidden]){animation:sube .4s both}
+.aviso{margin-top:22px;font-size:.95rem;color:var(--gris)}.carta+.aviso+.btn,.aviso+.btn{margin-top:18px}
+
+.bloque-color{border-radius:44px;margin:0 12px}
+.rosa{background:var(--rosa)}.rosa h2,.rosa .eyebrow,.rosa .frase{color:var(--vino2)}
+.lugar{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.limg{display:block;width:100%;max-width:440px;aspect-ratio:1;object-fit:cover;border-radius:28px;border:4px solid var(--crema);box-shadow:0 20px 40px rgba(69,16,31,.25)}
+.lugar p+p{margin-top:14px}
+.frase{margin-top:24px;font:700 2.2rem/1.1 var(--script)}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;justify-items:start}
+.videos iframe,.videos video{width:100%;max-width:340px;height:540px;border:0;border-radius:var(--r);background:#000;object-fit:cover}
+.vacio{max-width:520px}.vacio p{margin-bottom:20px;font:800 1.5rem/1.3 var(--serif);color:var(--vino)}
+
+.visita{background:var(--vino2);color:var(--crema);margin-bottom:14px}
+.visita h2,.visita .eyebrow{color:var(--crema)}.visita .eyebrow{color:var(--rosa)}
+.grid2{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center;margin-top:26px}
+.direccion{font:800 1.8rem/1.2 var(--serif)}
+.horarios{margin:16px 0 26px;max-width:340px}
+.horarios li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(247,237,220,.3)}
+iframe.mapa{width:100%;height:370px;border:0;border-radius:24px}
+footer{padding:26px 0 34px;text-align:center;font-size:.95rem;color:var(--gris)}
+footer .wrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+footer b{font:800 1.4rem var(--serif);color:var(--vino)}
+.wsp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;background:#1f8f3f;color:#fff;font-weight:700;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.3);isolation:isolate}
+.wsp::before{content:"";position:absolute;inset:0;border-radius:999px;background:#1f8f3f;z-index:-1;animation:latido 2.6s ease-out infinite}
+@keyframes latido{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(1.35,1.6);opacity:0}}
+
+.fb{display:grid;place-items:center;overflow:hidden;background:var(--bg,#ecd9bf)}
+.fb svg{width:64%;height:auto;overflow:visible}
 .steam path{fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;opacity:0;animation:vapor 2.8s ease-in infinite}
 .steam path:nth-child(2){animation-delay:.9s}.steam path:nth-child(3){animation-delay:1.8s}
 @keyframes vapor{0%{opacity:0;transform:translateY(14px)}35%{opacity:.9}100%{opacity:0;transform:translateY(-24px)}}
-.flota{animation:flota 3.4s ease-in-out infinite}
-@keyframes flota{50%{transform:translateY(-7px)}}
-.burb circle{opacity:0;animation:burb 2.6s ease-in infinite}
-.burb circle:nth-child(2){animation-delay:.8s}.burb circle:nth-child(3){animation-delay:1.6s}
+.flota{animation:flota 3.4s ease-in-out infinite}@keyframes flota{50%{transform:translateY(-7px)}}
+.burb circle{opacity:0;animation:burb 2.6s ease-in infinite}.burb circle:nth-child(2){animation-delay:.8s}.burb circle:nth-child(3){animation-delay:1.6s}
 @keyframes burb{0%{opacity:0;transform:translateY(8px)}30%{opacity:.9}100%{opacity:0;transform:translateY(-42px)}}
-.alt{background:var(--latte)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
-.chip{font:inherit;font-weight:500;font-size:.95rem;cursor:pointer;background:transparent;color:var(--espresso);border:2px solid var(--espresso);border-radius:999px;padding:8px 18px;min-height:42px;transition:background .2s,color .2s}
-.chip:hover{background:rgba(43,26,18,.08)}
-.chip[aria-pressed="true"]{background:var(--espresso);color:var(--espuma)}
-.carta{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 56px}
-.bloque[hidden]{display:none}
-.bloque{padding:8px 0 24px}
-.bloque h3{font:700 1.6rem var(--serif);padding-bottom:10px;border-bottom:2px solid var(--espresso);margin-bottom:6px}
-.bloque li{padding:10px 0;border-bottom:1px solid rgba(43,26,18,.18)}.bloque li:last-child{border:0}
-.bloque small{display:block;color:var(--cacao);line-height:1.4}
-.tacc{margin-left:8px;font:600 .75rem var(--sans);background:var(--fruto);color:#fff;padding:3px 10px;border-radius:99px;vertical-align:middle}
-.carta.pop .bloque:not([hidden]){animation:sube .4s both}
-.aviso{margin-top:12px;font-size:.92rem;color:var(--cacao)}
-.alt .btn{margin-top:22px}
-
-.lugar{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.lugar img{width:100%;max-width:460px;aspect-ratio:1;object-fit:cover;border-radius:28px}.lugar .fb{max-width:460px;aspect-ratio:1;border-radius:28px}
-.lugar p+p{margin-top:14px}
-.frase{font:italic 500 1.9rem/1.25 var(--serif);color:var(--fruto);margin-top:30px}
-
-.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;justify-items:start}
-.videos iframe,.videos video{width:100%;max-width:340px;height:540px;border:0;border-radius:20px;background:#000;object-fit:cover}
-.vacio{max-width:520px}.vacio p{margin-bottom:20px;font:500 1.4rem/1.3 var(--serif)}
-
-.visita{background:var(--espresso);color:var(--espuma);border-radius:40px 40px 0 0}
-.visita .sub{color:var(--latte)}
-.grid2{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;margin-top:28px}
-.direccion{font:700 1.8rem/1.2 var(--serif)}
-.horarios{margin:18px 0 28px;max-width:340px}
-.horarios li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid rgba(250,244,232,.25)}
-.visita .btn{border-color:var(--espuma)}.visita .btn:hover{background:var(--espuma);color:var(--espresso)}
-.visita .btn.lleno{background:var(--fruto);border-color:var(--fruto);color:#fff}
-iframe.mapa{width:100%;height:380px;border:0;border-radius:24px}
-footer{background:var(--espresso);color:var(--latte);padding:30px 0 36px;border-top:1px solid rgba(250,244,232,.2);font-size:.95rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
-footer b{font:700 1.2rem var(--serif);color:var(--espuma)}
-.wsp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;background:#1f8f3f;color:#fff;font-weight:600;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
 @media(max-width:800px){
-body{font-size:16px}section{padding:64px 0}
-header.top .wrap{height:60px}nav{gap:14px;font-size:.85rem}.logo span{display:none}
-.hero{padding:32px 0 48px}.hero-grid,.lugar,.grid2{grid-template-columns:1fr;gap:36px}
-.foto-wrap{max-width:380px}.hero .acciones .btn,.acciones .btn{flex:1 1 100%}
-.datos ul{grid-template-columns:repeat(2,1fr)}.datos li:nth-child(3){border-left:0;padding-left:0}.datos li:nth-child(n+3){border-top:1px solid var(--linea)}
-.fav{grid-template-columns:repeat(2,1fr);gap:20px 12px}.fav figure:nth-child(n){margin-top:0}.fav figure:nth-child(even){margin-top:24px}
-.fav figcaption{font-size:1.1rem}
-iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 28px 0 0}
+body{font-size:16px}section{padding:52px 0}
+header.top .wrap{flex-direction:column;height:auto;gap:0;padding-top:8px}
+nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(.7rem,3.4vw,.86rem)}nav a{padding:10px 3px 12px}
+.hero{padding:32px 0 86px;border-radius:0 0 32px 32px}
+.hero-grid,.lugar,.grid2{grid-template-columns:1fr;gap:32px}
+.hero .acciones,.acciones{flex-direction:column}.btn{width:100%}
+.sello{width:88px;height:88px;right:6px;top:-26px}.sello b{font-size:1.4rem}
+.datos{margin-top:-46px}.datos ul{grid-template-columns:repeat(2,1fr);gap:10px}.datos b{font-size:.95rem}
+.fav{grid-template-columns:repeat(2,1fr);gap:20px 12px}.fav figure:nth-child(n){margin-top:0}.fav figure:nth-child(even){margin-top:24px}.fav figcaption{font-size:1.1rem}
+.bloque-color{border-radius:32px;margin:0 8px}iframe.mapa{height:270px}footer{padding-bottom:92px}
 }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="Gianno Cafetería, inicio"><img src="logo.png" alt="" width="40" height="40"><span>Gianno</span></a>
+    <a class="logo" href="#inicio" aria-label="Gianno Cafetería, inicio"><img src="logo.png" alt="" width="42" height="42" onerror="this.remove()">Gianno</a>
     <nav aria-label="Principal"><a href="#favoritos">Favoritos</a><a href="#carta">Carta</a><a href="#lugar">El lugar</a><a href="#visitanos">Visitanos</a></nav>
   </div>
 </header>
@@ -142,116 +161,101 @@ iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 2
     <div class="wrap hero-grid">
       <div>
         <div class="estado" id="estado"><i></i><span id="estado-txt">Todos los días, de 9 a 21 hs</span></div>
-        <h1>Tu pausa favorita, todos los días.</h1>
-        <p class="lead">Café de especialidad y pastelería artesanal en Mataderos.</p>
-        <div class="acciones">
-          <a class="btn lleno" href="#carta">Ver la carta</a>
-          <a class="btn" href="#visitanos">Cómo llegar</a>
-        </div>
+        <h1>Gianno</h1>
+        <span class="script">cafetería</span>
+        <p class="lead">Tu pausa favorita, todos los días. Café de especialidad y pastelería artesanal en Mataderos.</p>
+        <div class="acciones"><a class="btn lleno" href="#carta">Ver la carta</a><a class="btn" href="#visitanos">Cómo llegar</a></div>
       </div>
       <div class="foto-wrap">
-        <img class="hero-foto" src="foto.jpg" data-fb="hero" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" width="900" height="1125" fetchpriority="high">
+        <img class="hero-foto" data-fb="cup" src="foto.jpg" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" width="900" height="1125" fetchpriority="high">
+        <div class="sello" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="c" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#c">Café de especialidad · Pastelería artesanal · </textPath></text></svg><b>G</b></div>
       </div>
     </div>
   </div>
 
-  <div class="datos">
-    <div class="wrap">
-      <ul>
-        <li><small>Horario</small><b>Todos los días, 9 a 21 hs</b></li>
-        <li><small>Dónde</small><b>Mataderos, CABA</b></li>
-        <li><small>Para acompañar</small><b>Pastelería artesanal</b></li>
-        <li><small>También hay</small><b>Opciones sin gluten</b></li>
-      </ul>
-    </div>
-  </div>
+  <div class="datos"><div class="wrap"><ul>
+    <li class="reveal"><small>Horario</small><b>Todos los días<br>9 a 21 hs</b></li>
+    <li class="reveal"><small>Dónde</small><b>Mataderos<br>CABA</b></li>
+    <li class="reveal"><small>Para acompañar</small><b>Pastelería<br>artesanal</b></li>
+    <li class="reveal"><small>También hay</small><b>Opciones<br>sin gluten</b></li>
+  </ul></div></div>
 
-  <section id="favoritos">
-    <div class="wrap">
-      <h2>Lo que más se pide</h2>
-      <p class="sub">Elegí un café y una porción: los dúos perfectos.</p>
-      <div class="fav">
-        <figure><img src="g1.jpg" data-fb="waffle" alt="Waffle con frutos rojos, crema y chocolate"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
-        <figure><img src="g2.jpg" data-fb="glass2" alt="Latte de vainilla en vaso alto"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
-        <figure><img src="g4.jpg" data-fb="cup" alt="Café y croissant de chocolate sobre un diario"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
-        <figure><img src="g6.jpg" data-fb="cake" alt="Cheesecake de frutos rojos"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
-        <figure><img src="g7.jpg" data-fb="cake2" alt="Torta Oreo con crema"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
-        <figure><img src="g3.jpg" data-fb="glass" alt="Jugo de naranja con una tostada"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
-      </div>
-    </div>
-  </section>
+  <div class="cinta" aria-hidden="true"><div class="cinta-in"><div class="cinta-t" id="cinta"></div></div></div>
 
-  <section id="carta" class="alt">
-    <div class="wrap">
-      <h2>La carta</h2>
-      <p class="sub">Un pantallazo de lo que hay en Gianno.</p>
-      <div class="chips" role="group" aria-label="Filtrar la carta">
-        <button class="chip" type="button" data-f="todo" aria-pressed="true">Todo</button>
-        <button class="chip" type="button" data-f="cafe" aria-pressed="false">Café</button>
-        <button class="chip" type="button" data-f="dulce" aria-pressed="false">Pastelería</button>
-        <button class="chip" type="button" data-f="comer" aria-pressed="false">Para comer</button>
-        <button class="chip" type="button" data-f="bebidas" aria-pressed="false">Bebidas</button>
-        <button class="chip" type="button" data-f="tacc" aria-pressed="false">Sin gluten</button>
-      </div>
-      <div class="carta" id="lista">
-        <div class="bloque" data-cat="cafe"><h3>Café</h3><ul><li>Espresso, cortado y café con leche</li><li>Latte de vainilla</li><li>Latte de dulce de leche</li><li>Cappuccino</li></ul></div>
-        <div class="bloque" data-cat="dulce"><h3>Pastelería</h3><ul><li>Medialunas y croissants</li><li>Croissant de chocolate</li><li>Cheesecake de frutos rojos</li><li>Tortas <small>de chocolate, Oreo y más</small></li><li>Waffles <small>con frutos rojos, crema y chocolate</small></li></ul></div>
-        <div class="bloque" data-cat="comer"><h3>Para comer</h3><ul><li>Tostado de jamón y queso</li><li>Avocado toast con huevo</li><li>Tostadas y opciones saladas para el desayuno</li></ul></div>
-        <div class="bloque" data-cat="bebidas"><h3>Bebidas</h3><ul><li>Limonada</li><li>Jugo de naranja</li><li>Agua y gaseosas</li></ul></div>
-        <div class="bloque" data-cat="tacc dulce"><h3>Sin gluten <span class="tacc">Artesanal</span></h3><ul><li>Postres sin gluten, hechos en el local</li></ul></div>
-      </div>
-      <p class="aviso">Carta orientativa. Consultá en el local por la disponibilidad y los precios del día.</p>
-      <a class="btn" id="btn-carta" href="#" target="_blank" rel="noopener">Ver carta completa</a>
+  <section id="favoritos"><div class="wrap">
+    <span class="eyebrow reveal">Lo que más se pide</span>
+    <h2 class="reveal">Los favoritos de Gianno</h2>
+    <p class="sub reveal">Elegí un café y una porción: los dúos perfectos.</p>
+    <div class="fav">
+      <figure class="reveal"><img class="fimg" data-fb="waffle" src="g1.jpg" alt="Waffle con frutos rojos, crema y chocolate"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
+      <figure class="reveal"><img class="fimg" data-fb="glass2" src="g2.jpg" alt="Latte de vainilla en vaso alto"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
+      <figure class="reveal"><img class="fimg" data-fb="cup" src="g4.jpg" alt="Café y croissant de chocolate sobre un diario"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
+      <figure class="reveal"><img class="fimg" data-fb="cake" src="g6.jpg" alt="Cheesecake de frutos rojos"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
+      <figure class="reveal"><img class="fimg" data-fb="cake2" src="g7.jpg" alt="Torta Oreo con crema"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
+      <figure class="reveal"><img class="fimg" data-fb="glass" src="g3.jpg" alt="Jugo de naranja con una tostada"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
     </div>
-  </section>
+  </div></section>
 
-  <section id="lugar">
-    <div class="wrap lugar">
-      <img src="g5.jpg" data-fb="cup2" alt="Taza de café sobre un plato, en una mesa de Gianno">
-      <div>
-        <h2>Un lugar para desconectar</h2>
-        <p>Mesas con sol, plantas y buena música. Gianno es el lugar para venir a trabajar, charlar o no hacer nada.</p>
-        <p>Cada día elaboramos pastelería artesanal y la acompañamos con café de especialidad, preparado al momento.</p>
-        <p class="frase">Los días comienzan mejor con calma.</p>
-      </div>
+  <section id="carta" style="padding-top:20px"><div class="wrap">
+    <span class="eyebrow reveal">Para todas las horas</span>
+    <h2 class="reveal">La carta</h2>
+    <p class="sub reveal">Un pantallazo de lo que hay en Gianno.</p>
+    <div class="chips reveal" role="group" aria-label="Filtrar la carta">
+      <button class="chip" type="button" data-f="todo" aria-pressed="true">Todo</button>
+      <button class="chip" type="button" data-f="cafe" aria-pressed="false">Café</button>
+      <button class="chip" type="button" data-f="dulce" aria-pressed="false">Pastelería</button>
+      <button class="chip" type="button" data-f="comer" aria-pressed="false">Para comer</button>
+      <button class="chip" type="button" data-f="bebidas" aria-pressed="false">Bebidas</button>
+      <button class="chip" type="button" data-f="tacc" aria-pressed="false">Sin gluten</button>
     </div>
-  </section>
-
-  <section id="videos" class="alt">
-    <div class="wrap">
-      <h2>Mirá lo que pasa en Gianno</h2>
-      <p class="sub">Tortas, café y novedades, directo de nuestro Instagram.</p>
-      <div class="videos" id="videos-grid"></div>
+    <div class="carta" id="lista">
+      <div class="bloque reveal" data-cat="cafe"><h3>Café</h3><ul><li>Espresso, cortado y café con leche</li><li>Latte de vainilla</li><li>Latte de dulce de leche</li><li>Cappuccino</li></ul></div>
+      <div class="bloque reveal" data-cat="dulce"><h3>Pastelería</h3><ul><li>Medialunas y croissants</li><li>Croissant de chocolate</li><li>Cheesecake de frutos rojos</li><li>Tortas <small>de chocolate, Oreo y más</small></li><li>Waffles <small>con frutos rojos, crema y chocolate</small></li></ul></div>
+      <div class="bloque reveal" data-cat="comer"><h3>Para comer</h3><ul><li>Tostado de jamón y queso</li><li>Avocado toast con huevo</li><li>Tostadas y opciones saladas para el desayuno</li></ul></div>
+      <div class="bloque reveal" data-cat="bebidas"><h3>Bebidas</h3><ul><li>Limonada</li><li>Jugo de naranja</li><li>Agua y gaseosas</li></ul></div>
+      <div class="bloque reveal" data-cat="tacc dulce"><h3>Sin gluten <span class="tacc">Artesanal</span></h3><ul><li>Postres sin gluten, hechos en el local</li></ul></div>
     </div>
-  </section>
+    <p class="aviso">Carta orientativa. Consultá en el local por la disponibilidad y los precios del día.</p>
+    <a class="btn" id="btn-carta" href="#" target="_blank" rel="noopener">Ver carta completa</a>
+  </div></section>
 
-  <section id="visitanos" class="visita">
-    <div class="wrap">
-      <h2>Visitanos en Mataderos</h2>
-      <div class="grid2">
-        <div>
-          <p class="direccion" id="direccion"></p>
-          <ul class="horarios"><li><span>Todos los días</span><span id="horarios"></span></li></ul>
-          <div class="acciones">
-            <a class="btn lleno" id="link-mapa" href="#" target="_blank" rel="noopener">Cómo llegar</a>
-            <a class="btn" id="link-ig" href="#" target="_blank" rel="noopener">Instagram</a>
-            <a class="btn" id="link-wsp" href="#" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+  <section id="lugar" class="bloque-color rosa"><div class="wrap lugar">
+    <img class="limg reveal" data-fb="cup" src="g5.jpg" alt="Taza de café sobre un plato, en una mesa de Gianno">
+    <div class="reveal">
+      <span class="eyebrow">Un espacio cálido</span>
+      <h2>Para desconectar</h2>
+      <p>Mesas con sol, plantas y buena música. Gianno es el lugar para venir a trabajar, charlar o no hacer nada.</p>
+      <p>Cada día elaboramos pastelería artesanal y la acompañamos con café de especialidad, preparado al momento.</p>
+      <p class="frase">Los días comienzan mejor con calma.</p>
+    </div>
+  </div></section>
+
+  <section id="videos"><div class="wrap">
+    <span class="eyebrow reveal">Desde nuestro Instagram</span>
+    <h2 class="reveal">Mirá lo que pasa en Gianno</h2>
+    <p class="sub reveal">Tortas, café y novedades, directo de nuestras redes.</p>
+    <div class="videos" id="videos-grid"></div>
+  </div></section>
+
+  <section id="visitanos" class="bloque-color visita on-dark"><div class="wrap">
+    <span class="eyebrow reveal">Te esperamos</span>
+    <h2 class="reveal">Visitanos en Mataderos</h2>
+    <div class="grid2">
+      <div class="reveal">
+        <p class="direccion" id="direccion"></p>
+        <ul class="horarios"><li><span>Todos los días</span><span id="horarios"></span></li></ul>
+        <div class="acciones">
+          <a class="btn lleno" id="link-mapa" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+          <a class="btn" id="link-ig" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn" id="link-wsp" href="#" target="_blank" rel="noopener">WhatsApp</a>
         </div>
-        <iframe class="mapa" id="mapa" title="Mapa de Gianno Cafetería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+      <iframe class="mapa reveal" id="mapa" title="Mapa de Gianno Cafetería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-  </section>
+  </div></section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <b>Gianno Cafetería</b>
-    <span>Mataderos, CABA</span>
-    <a id="pie-ig" href="#" target="_blank" rel="noopener"></a>
-    <span>© 2026 Gianno Cafetería</span>
-  </div>
-</footer>
+<footer><div class="wrap"><b>Gianno Cafetería</b><span>Mataderos, CABA</span><a id="pie-ig" href="#" target="_blank" rel="noopener"></a><span>© 2026 Gianno Cafetería</span></div></footer>
 <a class="wsp" id="wsp-flotante" href="#" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.4-.2-2.6.7.7-2.5-.2-.4A8 8 0 0 1 12 4z"/></svg>WhatsApp</a>
 
 <script>
@@ -264,8 +268,7 @@ const CONFIG = {
   whatsapp: "",                              // ej: "5491112345678" (vacío = se oculta)
   cartaUrl: "",                              // link de Drive/PDF de la carta (vacío = se oculta)
   mapaBusqueda: "Gianno Cafetería Mataderos CABA",
-  /* Videos: código del reel de Instagram (instagram.com/reel/ABC123/ → "ABC123")
-     o un mp4 subido al repo. */
+  /* Videos: código del reel de Instagram (instagram.com/reel/ABC123/ → "ABC123") o un mp4 del repo. */
   videos: [
     // { tipo: "ig", id: "ABC123xyz" },
     // { tipo: "mp4", src: "video1.mp4" },
@@ -285,14 +288,17 @@ const CONFIG = {
   else{$("link-wsp").style.display="none";$("wsp-flotante").style.display="none"}
   if(CONFIG.cartaUrl)$("btn-carta").href=CONFIG.cartaUrl;else $("btn-carta").style.display="none";
 
+  var t="";["Café de especialidad","Pastelería artesanal","Mataderos","Tu pausa favorita"].forEach(function(s){t+="<span>"+s+"</span><span>✦</span>"});
+  $("cinta").innerHTML=t+t+t+t;
 
+  /* Si una foto no carga, se muestra una ilustración animada */
   var CUP='<svg viewBox="0 0 120 120"><g class="steam" style="color:#f3e6d3"><path d="M44 38c-7-8 7-12 0-24"/><path d="M60 38c-7-8 7-12 0-24"/><path d="M76 38c-7-8 7-12 0-24"/></g><g class="flota"><path d="M26 52h68v18a30 30 0 0 1-30 30h-8a30 30 0 0 1-30-30z" fill="#faf4e8"/><path d="M94 58h6a10 10 0 0 1 0 22h-8" fill="none" stroke="#faf4e8" stroke-width="7"/><ellipse cx="60" cy="52" rx="34" ry="6" fill="#8a5a3a"/></g><ellipse cx="60" cy="106" rx="46" ry="7" fill="#d8c3a5"/></svg>';
-  var CAKE=function(t){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M12 78L100 56v32L12 104z" fill="#f3d9b1"/><path d="M12 78L100 56v11L12 89z" fill="#fff"/><path d="M12 78L100 56 78 44 12 62z" fill="'+t+'"/><path d="M12 62L78 44l22 12" fill="none" stroke="#6b3b2a" stroke-width="3"/><circle cx="52" cy="48" r="8" fill="#a8233f"/><path d="M52 40q4-8 10-8" fill="none" stroke="#3d7a3a" stroke-width="3" stroke-linecap="round"/></g></svg>'};
+  var CAKE=function(c){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M12 78L100 56v32L12 104z" fill="#f3d9b1"/><path d="M12 78L100 56v11L12 89z" fill="#fff"/><path d="M12 78L100 56 78 44 12 62z" fill="'+c+'"/><circle cx="52" cy="48" r="8" fill="#a8233f"/><path d="M52 40q4-8 10-8" fill="none" stroke="#3d7a3a" stroke-width="3" stroke-linecap="round"/></g></svg>'};
   var WAF='<svg viewBox="0 0 120 120"><g class="steam" style="color:#fff"><path d="M44 30c-7-8 7-12 0-22"/><path d="M62 30c-7-8 7-12 0-22"/><path d="M80 30c-7-8 7-12 0-22"/></g><g class="flota"><rect x="20" y="36" width="80" height="72" rx="14" fill="#e0a95a"/><path d="M47 36v72M73 36v72M20 62h80M20 86h80" stroke="#b9782e" stroke-width="4"/><circle cx="46" cy="48" r="9" fill="#a8233f"/><circle cx="68" cy="46" r="8" fill="#c43a58"/><circle cx="84" cy="54" r="7" fill="#a8233f"/><path d="M30 72q12 14 26 0t28 6" fill="none" stroke="#4a2616" stroke-width="5" stroke-linecap="round"/></g></svg>';
-  var GLASS=function(c,t){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M34 30h52l-6 76H40z" fill="'+c+'"/><path d="M34 30h52l-1 14H35z" fill="'+t+'"/><path d="M70 32l12-24" stroke="#a8233f" stroke-width="5" stroke-linecap="round"/><g class="burb" fill="#fff"><circle cx="52" cy="92" r="4"/><circle cx="68" cy="96" r="3"/><circle cx="58" cy="86" r="3"/></g></g></svg>'};
-  var FB={hero:["#3a2418",CUP],cup:["#3a2418",CUP],cup2:["#3a2418",CUP],waffle:["#f5d9a6",WAF],glass:["#fbd8a0",GLASS("#f59a2c","#ffd27a")],glass2:["#e9dcc6",GLASS("#c99a6b","#f6ead6")],cake:["#f4cdd3",CAKE("#e7a9b3")],cake2:["#d9c6b8",CAKE("#4a2c22")]};
+  var GL=function(c,h){return '<svg viewBox="0 0 120 120"><g class="flota"><path d="M34 30h52l-6 76H40z" fill="'+c+'"/><path d="M34 30h52l-1 14H35z" fill="'+h+'"/><path d="M70 32l12-24" stroke="#a8233f" stroke-width="5" stroke-linecap="round"/><g class="burb" fill="#fff"><circle cx="52" cy="92" r="4"/><circle cx="68" cy="96" r="3"/><circle cx="58" cy="86" r="3"/></g></g></svg>'};
+  var FB={cup:["#3a2418",CUP],waffle:["#f5d9a6",WAF],glass:["#fbd8a0",GL("#f59a2c","#ffd27a")],glass2:["#e9dcc6",GL("#c99a6b","#f6ead6")],cake:["#f4cdd3",CAKE("#e7a9b3")],cake2:["#d9c6b8",CAKE("#4a2c22")]};
   document.querySelectorAll("img[data-fb]").forEach(function(im){
-    function swap(){var f=FB[im.getAttribute("data-fb")]||FB.cup,d=document.createElement("div");d.className="fb "+im.className;d.style.setProperty("--bg",f[0]);d.setAttribute("role","img");d.setAttribute("aria-label",im.alt);d.innerHTML=typeof f[1]==="function"?f[1]():f[1];if(im.parentNode)im.parentNode.replaceChild(d,im)}
+    function swap(){var f=FB[im.getAttribute("data-fb")]||FB.cup,d=document.createElement("div");d.className="fb "+im.className;d.style.setProperty("--bg",f[0]);d.setAttribute("role","img");d.setAttribute("aria-label",im.alt);d.innerHTML=f[1];if(im.parentNode)im.parentNode.replaceChild(d,im)}
     im.addEventListener("error",swap);if(im.complete&&!im.naturalWidth)swap()});
 
   var g=$("videos-grid");
@@ -318,11 +324,16 @@ const CONFIG = {
     bl.forEach(function(b){b.hidden=!(f==="todo"||(" "+b.getAttribute("data-cat")+" ").indexOf(" "+f+" ")>-1)});
     if(!reduce){lista.classList.remove("pop");void lista.offsetWidth;lista.classList.add("pop")}})});
 
+  var els=document.querySelectorAll(".reveal");
+  els.forEach(function(el){var s=[].filter.call(el.parentNode.children,function(c){return c.classList.contains("reveal")});el.style.transitionDelay=Math.min(s.indexOf(el),5)*80+"ms"});
   if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
     var links={};document.querySelectorAll("nav a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
     var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.remove("act")});if(links[x.target.id])links[x.target.id].classList.add("act")}})},{rootMargin:"-40% 0px -55% 0px"});
     Object.keys(links).forEach(function(k){var s=$(k);if(s)so.observe(s)});
-  }
+  }else els.forEach(function(el){el.classList.add("in")});
+  var hd=document.querySelector("header.top");addEventListener("scroll",function(){hd.classList.toggle("sc",pageYOffset>10)},{passive:true});
 })();
 </script>
 </body>
