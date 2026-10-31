@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0c0a08">
+<meta name="theme-color" content="#faf4e8">
 <title>Gianno Cafetería | Café de especialidad y pastelería artesanal en Mataderos</title>
 <meta name="description" content="Gianno Cafetería: café de especialidad y pastelería artesanal en Mataderos, CABA. Tu pausa favorita, todos los días.">
 <meta property="og:type" content="website">
@@ -14,144 +14,115 @@
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--negro:#0c0a08;--carbon:#15110e;--dorado:#d8b886;--oro2:#f1dcb4;--crema:#f3e9d8;--madera:#6b4a2f;--naranja:#e8782b;--texto:#e9dfcf;--suave:#a99c88;--linea:rgba(216,184,134,.22);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--r:20px;--oro:linear-gradient(135deg,#f6e6c3,#d8b886 45%,#a67c45)}
+:root{--espresso:#2b1a12;--latte:#ecd9bf;--espuma:#faf4e8;--fruto:#a8233f;--cacao:#6f5848;--linea:rgba(43,26,18,.16);--serif:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--negro);color:var(--texto);font:300 17px/1.7 var(--sans);overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+body{background:var(--espuma);color:var(--espresso);font:400 17px/1.65 var(--sans);overflow-x:hidden}
 img{max-width:100%;display:block}a{color:inherit}ul{list-style:none}
-:focus-visible{outline:2px solid var(--dorado);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-section{padding:92px 0;scroll-margin-top:80px;text-align:center}
-.eyebrow{display:block;font:italic 500 1.5rem var(--serif);color:var(--naranja);margin-bottom:2px}
-h2{font:600 clamp(2.4rem,6vw,3.8rem)/1.02 var(--serif);color:var(--crema);margin-bottom:16px}
-h2::after{content:"";display:block;width:56px;height:2px;margin:18px auto 0;background:var(--oro)}
-.sub{max-width:52ch;margin:18px auto 40px;color:var(--suave)}
-.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 30px;border:1px solid var(--dorado);border-radius:999px;color:var(--dorado);text-decoration:none;font-weight:400;letter-spacing:.06em;transition:background .25s,color .25s,transform .15s,box-shadow .25s;isolation:isolate}
-.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .6s;z-index:-1}
-.btn:hover::after{left:130%}.btn:hover{background:rgba(216,184,134,.14)}.btn:active{transform:scale(.96)}
-.btn.lleno{background:var(--oro);color:var(--negro);border-color:transparent;box-shadow:0 8px 26px rgba(216,184,134,.25)}.btn.lleno:hover{box-shadow:0 10px 34px rgba(216,184,134,.4)}
-.acciones{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.progreso{position:fixed;top:0;left:0;right:0;height:3px;z-index:101;background:var(--oro);transform-origin:0 50%;transform:scaleX(var(--p,0));pointer-events:none}
+:focus-visible{outline:3px solid var(--fruto);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;scroll-margin-top:64px}
+h2{font:700 clamp(2rem,5vw,3.2rem)/1.08 var(--serif);letter-spacing:-.01em;margin-bottom:14px}
+.sub{max-width:50ch;color:var(--cacao);margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 28px;border:2px solid var(--espresso);border-radius:999px;text-decoration:none;font-weight:600;transition:background .2s,color .2s,transform .15s}
+.btn:hover{background:var(--espresso);color:var(--espuma)}.btn:active{transform:scale(.97)}
+.btn.lleno{background:var(--fruto);border-color:var(--fruto);color:#fff}.btn.lleno:hover{background:var(--espresso);border-color:var(--espresso)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
 
-header.top{position:sticky;top:0;z-index:20;background:rgba(12,10,8,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--linea);transition:box-shadow .3s}
-header.top.sc{box-shadow:0 10px 30px rgba(0,0,0,.55)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font:600 1.35rem var(--serif);letter-spacing:.34em;color:var(--dorado)}
-.logo img{height:44px;width:44px;border-radius:50%;border:1px solid var(--linea)}
-nav{display:flex;gap:24px;font-size:.93rem}
-nav a{position:relative;text-decoration:none;padding:6px 0 9px;color:var(--texto);transition:color .2s}
-nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--dorado);transform:scaleX(0);transition:transform .35s}
-nav a:hover,nav a.act{color:var(--dorado)}nav a:hover::after{transform:scaleX(.45)}nav a.act::after{transform:scaleX(1)}
+header.top{position:sticky;top:0;z-index:20;background:rgba(250,244,232,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.45rem var(--serif)}
+.logo img{width:40px;height:40px;border-radius:50%}
+nav{display:flex;gap:26px;font-weight:500;font-size:.96rem}
+nav a{text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .2s}
+nav a:hover,nav a.act{border-color:var(--fruto)}
 
-.hero{position:relative;overflow:hidden;padding:64px 0 130px;background:radial-gradient(ellipse 60% 50% at 80% 10%,rgba(216,184,134,.2),transparent 70%),radial-gradient(ellipse 50% 50% at 0 100%,rgba(232,120,43,.12),transparent 70%),var(--negro);border-radius:0 0 48px 48px;text-align:center}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-.estado{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid rgba(127,214,143,.5);border-radius:999px;font-size:.9rem;margin-bottom:26px;background:rgba(127,214,143,.07)}
-.estado i{position:relative;width:10px;height:10px;border-radius:50%;background:#7fd68f}
-.estado i::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s ease-out infinite}
-.estado.pronto{border-color:rgba(255,200,87,.6)}.estado.pronto i{background:#ffc857}
-.estado.cerrado{border-color:var(--linea);background:transparent}.estado.cerrado i{background:var(--suave)}.estado.cerrado i::after{animation:none}
-@keyframes ping{0%{transform:scale(1);opacity:.8}100%{transform:scale(3.2);opacity:0}}
-.bean{width:26px;height:38px;margin:0 auto 14px;display:block}
-.hero h1{font:600 clamp(3.8rem,14vw,8.6rem)/.92 var(--serif);letter-spacing:.16em;margin-right:-.16em;background:var(--oro);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .script{display:block;font:400 clamp(.95rem,3vw,1.3rem) var(--sans);letter-spacing:.6em;margin:10px -.6em 0 0;color:var(--crema);text-transform:uppercase}
-.hero .lead{max-width:34ch;margin:28px auto 0;font:italic 500 1.55rem/1.35 var(--serif);color:var(--texto)}
-.hero .acciones{margin-top:32px}
-.foto-wrap{position:relative;max-width:420px;margin:0 auto;width:100%}
-.foto-wrap::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--dorado);border-radius:220px 220px 22px 22px;opacity:.55}
-.hero-foto{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:220px 220px 22px 22px;box-shadow:0 30px 70px rgba(0,0,0,.65)}
-.sello{position:absolute;right:-16px;bottom:40px;width:112px;height:112px;border-radius:50%;background:var(--negro);border:1px solid var(--dorado);display:grid;place-items:center;z-index:2}
-.sello svg{position:absolute;inset:0;animation:gira 24s linear infinite}
-.sello text{font:500 10.5px var(--sans);letter-spacing:.14em;text-transform:uppercase;fill:var(--dorado)}
-.sello img{width:46px;height:46px;border-radius:50%}
-@keyframes gira{to{transform:rotate(360deg)}}
-@keyframes sube{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-.js .hero .estado,.js .hero .bean,.js .hero h1,.js .hero .script,.js .hero .lead,.js .hero .acciones,.js .foto-wrap{animation:sube .9s cubic-bezier(.2,.7,.2,1) both}
-.js .hero .bean{animation-delay:.05s}.js .hero h1{animation-delay:.14s}.js .hero .script{animation-delay:.28s}.js .hero .lead{animation-delay:.42s}.js .hero .acciones{animation-delay:.56s}.js .foto-wrap{animation-delay:.3s}
+.hero{padding:56px 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.estado{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;background:#dcebd3;font-size:.92rem;font-weight:500;margin-bottom:24px}
+.estado i{width:9px;height:9px;border-radius:50%;background:#2f8a46}
+.estado.pronto{background:#f6e3b4}.estado.pronto i{background:#c98a0b}
+.estado.cerrado{background:var(--latte)}.estado.cerrado i{background:var(--cacao)}
+.hero h1{font:700 clamp(3rem,8vw,5.6rem)/.98 var(--serif);letter-spacing:-.025em}
+.hero .lead{max-width:36ch;margin:24px 0 32px;font-size:1.2rem;color:var(--cacao)}
+.foto-wrap{position:relative}
+.hero-foto{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.foto-wrap::after{content:"";position:absolute;z-index:-1;inset:22px -16px -16px 22px;border-radius:28px;background:var(--latte)}
+.js .hero-grid>*{animation:sube .8s cubic-bezier(.2,.7,.2,1) both}.js .hero-grid>*:last-child{animation-delay:.15s}
+@keyframes sube{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-.datos{position:relative;z-index:2;margin-top:-66px;padding:0}
-.datos ul{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.card,.datos li{position:relative;background:linear-gradient(160deg,#1d1712,var(--carbon));border:1px solid var(--linea);border-radius:var(--r);transition:transform .3s,border-color .3s,box-shadow .3s}
-.datos li{padding:20px 12px;box-shadow:0 16px 34px rgba(0,0,0,.5)}
-.datos small{display:block;font:italic 500 1.25rem var(--serif);color:var(--naranja);line-height:1}
-.datos b{display:block;margin-top:6px;font:600 1.15rem/1.25 var(--serif);color:var(--crema)}
-@media(hover:hover){.card:hover,.datos li:hover{transform:translateY(-5px);border-color:var(--dorado);box-shadow:0 18px 40px rgba(0,0,0,.5)}}
+.datos{border-block:1px solid var(--linea)}
+.datos ul{display:grid;grid-template-columns:repeat(4,1fr)}
+.datos li{padding:22px 20px;border-left:1px solid var(--linea)}
+.datos li:first-child{border-left:0;padding-left:0}
+.datos small{display:block;color:var(--cacao);font-size:.85rem}
+.datos b{font:600 1.15rem/1.3 var(--serif)}
 
-.cinta{overflow:hidden;padding:52px 0 0}
-.cinta-in{margin:0 -4%;transform:rotate(-1.4deg);background:var(--oro);color:var(--negro);padding:13px 0;overflow:hidden}
-.cinta-t{display:flex;width:max-content;white-space:nowrap;animation:cinta 38s linear infinite}
-.cinta-t span{font:italic 600 1.35rem var(--serif);padding:0 20px}
-@keyframes cinta{to{transform:translateX(-50%)}}
+.fav{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px}
+.fav img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;margin-bottom:12px;transition:transform .4s}
+.fav figure:hover img{transform:translateY(-4px)}
+.fav figure:nth-child(3n+2){margin-top:36px}
+.fav figcaption{font:700 1.3rem/1.2 var(--serif)}
+.fav small{display:block;font:400 .95rem var(--sans);color:var(--cacao)}
 
-.fav{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.fav figure{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--linea);aspect-ratio:4/5;background:var(--carbon)}
-.fav figure:nth-child(1),.fav figure:nth-child(6){aspect-ratio:1}
-.fav img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.fav figure:hover img{transform:scale(1.07)}
-.fav figcaption{position:absolute;inset:auto 0 0;padding:46px 18px 16px;text-align:left;background:linear-gradient(transparent,rgba(12,10,8,.92));font:600 1.35rem/1.15 var(--serif);color:var(--crema)}
-.fav figcaption small{display:block;font:300 .85rem var(--sans);color:var(--dorado);margin-top:3px}
+.alt{background:var(--latte)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chip{font:inherit;font-weight:500;font-size:.95rem;cursor:pointer;background:transparent;color:var(--espresso);border:2px solid var(--espresso);border-radius:999px;padding:8px 18px;min-height:42px;transition:background .2s,color .2s}
+.chip:hover{background:rgba(43,26,18,.08)}
+.chip[aria-pressed="true"]{background:var(--espresso);color:var(--espuma)}
+.carta{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px 56px}
+.bloque[hidden]{display:none}
+.bloque{padding:8px 0 24px}
+.bloque h3{font:700 1.6rem var(--serif);padding-bottom:10px;border-bottom:2px solid var(--espresso);margin-bottom:6px}
+.bloque li{padding:10px 0;border-bottom:1px solid rgba(43,26,18,.18)}.bloque li:last-child{border:0}
+.bloque small{display:block;color:var(--cacao);line-height:1.4}
+.tacc{margin-left:8px;font:600 .75rem var(--sans);background:var(--fruto);color:#fff;padding:3px 10px;border-radius:99px;vertical-align:middle}
+.carta.pop .bloque:not([hidden]){animation:sube .4s both}
+.aviso{margin-top:12px;font-size:.92rem;color:var(--cacao)}
+.alt .btn{margin-top:22px}
 
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:28px}
-.chip{font:inherit;font-weight:400;font-size:.92rem;cursor:pointer;background:transparent;color:var(--dorado);border:1px solid var(--dorado);border-radius:999px;padding:8px 18px;min-height:42px;transition:background .2s,color .2s,transform .15s}
-.chip:hover{background:rgba(216,184,134,.12)}.chip:active{transform:scale(.94)}
-.chip[aria-pressed="true"]{background:var(--oro);color:var(--negro);border-color:transparent}
-.carta{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;text-align:left}
-.bloque{padding:28px 26px;border-top:3px solid var(--dorado)}
-.bloque[hidden]{display:none}.bloque:nth-child(even){border-top-color:var(--naranja)}
-.bloque h3{font:600 1.7rem var(--serif);color:var(--crema);margin-bottom:10px}
-.bloque li{padding:8px 0;border-bottom:1px dashed var(--linea)}.bloque li:last-child{border:0}
-.bloque small{display:block;color:var(--suave);line-height:1.4}
-.tacc{display:inline-block;margin-left:6px;font:500 .72rem var(--sans);background:var(--naranja);color:var(--negro);padding:2px 10px;border-radius:99px;vertical-align:middle}
-.carta.pop .bloque:not([hidden]){animation:sube .45s both}
-.aviso{margin-top:24px;font-size:.92rem;color:var(--suave)}
+.lugar{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+.lugar p+p{margin-top:14px}
+.frase{font:italic 500 1.9rem/1.25 var(--serif);color:var(--fruto);margin-top:30px}
 
-.alt{background:linear-gradient(180deg,var(--carbon),#100c09);border-radius:48px;margin:0 12px}
-.lugar{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;text-align:left}
-.lugar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);border:1px solid var(--linea)}
-.lugar h2::after{margin-left:0}.lugar p+p{margin-top:14px}
-.frase{font:italic 500 2rem/1.25 var(--serif);color:var(--dorado);margin-top:28px;padding-left:18px;border-left:2px solid var(--naranja)}
-.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;justify-items:center}
-.videos iframe,.videos video{width:100%;max-width:340px;height:540px;border:1px solid var(--linea);border-radius:var(--r);background:#000;object-fit:cover}
-.vacio{max-width:540px;margin:0 auto;padding:46px 28px;border:1px dashed var(--madera);border-radius:var(--r);color:var(--suave)}
-.vacio p{margin-bottom:22px}
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;justify-items:start}
+.videos iframe,.videos video{width:100%;max-width:340px;height:540px;border:0;border-radius:20px;background:#000;object-fit:cover}
+.vacio{max-width:520px}.vacio p{margin-bottom:20px;font:500 1.4rem/1.3 var(--serif)}
 
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px;align-items:center;margin-top:34px}
-.direccion{font:600 1.7rem var(--serif);color:var(--crema)}
-.horarios{margin:16px auto 26px;max-width:340px}
-.horarios li{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid var(--linea)}
-iframe.mapa{width:100%;height:370px;border:0;border-radius:var(--r);filter:grayscale(.7) invert(.9) contrast(.9)}
-footer{margin-top:56px;padding:38px 0;border-top:1px solid var(--linea);text-align:center;font-size:.95rem;color:var(--suave)}
-footer .wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
-footer .marca{font:600 1.5rem var(--serif);letter-spacing:.34em;color:var(--dorado)}
-.wsp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;background:#1f8f3f;color:#fff;font-weight:500;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.45);isolation:isolate}
-.wsp::before{content:"";position:absolute;inset:0;border-radius:999px;background:#1f8f3f;z-index:-1;animation:latido 2.6s ease-out infinite}
-@keyframes latido{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(1.35,1.6);opacity:0}}
-.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
-.js .reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}}
-@media(max-width:760px){
-body{font-size:16px}section{padding:60px 0}
-header.top .wrap{flex-direction:column;height:auto;gap:2px;padding-top:8px;padding-bottom:0}
-nav{width:100%;justify-content:space-between;gap:0;font-size:clamp(.7rem,3.2vw,.86rem)}nav a{padding:10px 3px 12px}
-.hero{padding:34px 0 98px;border-radius:0 0 34px 34px}
-.hero-grid,.lugar{grid-template-columns:1fr;gap:34px}
-.hero .acciones{flex-direction:column}.foto-wrap{max-width:340px}.sello{width:90px;height:90px;right:-6px;bottom:30px}.sello img{width:36px;height:36px}
-.datos{margin-top:-54px}.datos ul{grid-template-columns:repeat(2,1fr);gap:10px}
-.fav{grid-template-columns:repeat(2,1fr);gap:10px}.fav figure:nth-child(n){aspect-ratio:4/5}.fav figcaption{font-size:1.1rem;padding:36px 12px 12px}
-.alt{border-radius:32px;margin:0 8px}.acciones .btn{width:100%}
-iframe.mapa{height:270px}footer{padding-bottom:92px}
+.visita{background:var(--espresso);color:var(--espuma);border-radius:40px 40px 0 0}
+.visita .sub{color:var(--latte)}
+.grid2{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;margin-top:28px}
+.direccion{font:700 1.8rem/1.2 var(--serif)}
+.horarios{margin:18px 0 28px;max-width:340px}
+.horarios li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid rgba(250,244,232,.25)}
+.visita .btn{border-color:var(--espuma)}.visita .btn:hover{background:var(--espuma);color:var(--espresso)}
+.visita .btn.lleno{background:var(--fruto);border-color:var(--fruto);color:#fff}
+iframe.mapa{width:100%;height:380px;border:0;border-radius:24px}
+footer{background:var(--espresso);color:var(--latte);padding:30px 0 36px;border-top:1px solid rgba(250,244,232,.2);font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer b{font:700 1.2rem var(--serif);color:var(--espuma)}
+.wsp{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;background:#1f8f3f;color:#fff;font-weight:600;text-decoration:none;padding:13px 20px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(max-width:800px){
+body{font-size:16px}section{padding:64px 0}
+header.top .wrap{height:60px}nav{gap:14px;font-size:.85rem}.logo span{display:none}
+.hero{padding:32px 0 48px}.hero-grid,.lugar,.grid2{grid-template-columns:1fr;gap:36px}
+.foto-wrap{max-width:380px}.hero .acciones .btn,.acciones .btn{flex:1 1 100%}
+.datos ul{grid-template-columns:repeat(2,1fr)}.datos li:nth-child(3){border-left:0;padding-left:0}.datos li:nth-child(n+3){border-top:1px solid var(--linea)}
+.fav{grid-template-columns:repeat(2,1fr);gap:20px 12px}.fav figure:nth-child(n){margin-top:0}.fav figure:nth-child(even){margin-top:24px}
+.fav figcaption{font-size:1.1rem}
+iframe.mapa{height:280px}footer{padding-bottom:90px}.visita{border-radius:28px 28px 0 0}
 }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#inicio" aria-label="Gianno Cafetería, inicio"><img src="logo.png" alt="" width="44" height="44">GIANNO</a>
-    <nav aria-label="Principal">
-      <a href="#favoritos">Favoritos</a><a href="#carta">Carta</a><a href="#lugar">El lugar</a><a href="#videos">Videos</a><a href="#visitanos">Visitanos</a>
-    </nav>
+    <a class="logo" href="#inicio" aria-label="Gianno Cafetería, inicio"><img src="logo.png" alt="" width="40" height="40"><span>Gianno</span></a>
+    <nav aria-label="Principal"><a href="#favoritos">Favoritos</a><a href="#carta">Carta</a><a href="#lugar">El lugar</a><a href="#visitanos">Visitanos</a></nav>
   </div>
 </header>
 
@@ -160,10 +131,8 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
     <div class="wrap hero-grid">
       <div>
         <div class="estado" id="estado"><i></i><span id="estado-txt">Todos los días, de 9 a 21 hs</span></div>
-        <svg class="bean" viewBox="0 0 26 38" fill="none" stroke="#d8b886" stroke-width="1.4" aria-hidden="true"><ellipse cx="13" cy="19" rx="10" ry="16"/><path d="M13 4c-5 8 5 11 0 20s3 9 0 10" stroke-linecap="round"/></svg>
-        <h1>GIANNO</h1>
-        <span class="script">cafetería</span>
-        <p class="lead">Tu pausa favorita, todos los días. Café de especialidad y pastelería artesanal en Mataderos.</p>
+        <h1>Tu pausa favorita, todos los días.</h1>
+        <p class="lead">Café de especialidad y pastelería artesanal en Mataderos.</p>
         <div class="acciones">
           <a class="btn lleno" href="#carta">Ver la carta</a>
           <a class="btn" href="#visitanos">Cómo llegar</a>
@@ -171,7 +140,6 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
       </div>
       <div class="foto-wrap">
         <img class="hero-foto" src="foto.jpg" alt="Croissant, limonada y una maceta de gatito en una mesa junto a la ventana de Gianno" width="900" height="1125" fetchpriority="high">
-        <div class="sello" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><path id="c" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#c">Café de especialidad · Pastelería artesanal · </textPath></text></svg><img src="logo.png" alt=""></div>
       </div>
     </div>
   </div>
@@ -179,38 +147,34 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
   <div class="datos">
     <div class="wrap">
       <ul>
-        <li class="reveal"><small>Horario</small><b>Todos los días<br>9 a 21 hs</b></li>
-        <li class="reveal"><small>Dónde</small><b>Mataderos<br>CABA</b></li>
-        <li class="reveal"><small>Para acompañar</small><b>Pastelería<br>artesanal</b></li>
-        <li class="reveal"><small>También hay</small><b>Opciones<br>sin gluten</b></li>
+        <li><small>Horario</small><b>Todos los días, 9 a 21 hs</b></li>
+        <li><small>Dónde</small><b>Mataderos, CABA</b></li>
+        <li><small>Para acompañar</small><b>Pastelería artesanal</b></li>
+        <li><small>También hay</small><b>Opciones sin gluten</b></li>
       </ul>
     </div>
   </div>
 
-  <div class="cinta" aria-hidden="true"><div class="cinta-in"><div class="cinta-t" id="cinta"></div></div></div>
-
   <section id="favoritos">
     <div class="wrap">
-      <span class="eyebrow reveal">Lo que más se pide</span>
-      <h2 class="reveal">Los favoritos de Gianno</h2>
-      <p class="sub reveal">Elegí un café y una porción: los dúos perfectos.</p>
+      <h2>Lo que más se pide</h2>
+      <p class="sub">Elegí un café y una porción: los dúos perfectos.</p>
       <div class="fav">
-        <figure class="reveal"><img src="g1.jpg" alt="Waffle con frutos rojos, crema y chocolate" loading="lazy"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
-        <figure class="reveal"><img src="g2.jpg" alt="Latte de vainilla en vaso alto" loading="lazy"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
-        <figure class="reveal"><img src="g4.jpg" alt="Café y croissant de chocolate sobre un diario" loading="lazy"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
-        <figure class="reveal"><img src="g6.jpg" alt="Cheesecake de frutos rojos" loading="lazy"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
-        <figure class="reveal"><img src="g7.jpg" alt="Torta Oreo con crema" loading="lazy"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
-        <figure class="reveal"><img src="g3.jpg" alt="Jugo de naranja con una tostada" loading="lazy"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
+        <figure><img src="g1.jpg" alt="Waffle con frutos rojos, crema y chocolate" loading="lazy"><figcaption>Waffles<small>Frutos rojos, crema y chocolate</small></figcaption></figure>
+        <figure><img src="g2.jpg" alt="Latte de vainilla en vaso alto" loading="lazy"><figcaption>Latte de vainilla<small>Café con leche y vainilla</small></figcaption></figure>
+        <figure><img src="g4.jpg" alt="Café y croissant de chocolate sobre un diario" loading="lazy"><figcaption>Café y croissant<small>Con chocolate</small></figcaption></figure>
+        <figure><img src="g6.jpg" alt="Cheesecake de frutos rojos" loading="lazy"><figcaption>Cheesecake<small>De frutos rojos</small></figcaption></figure>
+        <figure><img src="g7.jpg" alt="Torta Oreo con crema" loading="lazy"><figcaption>Torta Oreo<small>Con crema y chocolate</small></figcaption></figure>
+        <figure><img src="g3.jpg" alt="Jugo de naranja con una tostada" loading="lazy"><figcaption>Jugo de naranja<small>Para el desayuno</small></figcaption></figure>
       </div>
     </div>
   </section>
 
   <section id="carta" class="alt">
     <div class="wrap">
-      <span class="eyebrow reveal">Para todas las horas</span>
-      <h2 class="reveal">La carta</h2>
-      <p class="sub reveal">Un pantallazo de lo que hay en Gianno.</p>
-      <div class="chips reveal" role="group" aria-label="Filtrar la carta">
+      <h2>La carta</h2>
+      <p class="sub">Un pantallazo de lo que hay en Gianno.</p>
+      <div class="chips" role="group" aria-label="Filtrar la carta">
         <button class="chip" type="button" data-f="todo" aria-pressed="true">Todo</button>
         <button class="chip" type="button" data-f="cafe" aria-pressed="false">Café</button>
         <button class="chip" type="button" data-f="dulce" aria-pressed="false">Pastelería</button>
@@ -219,23 +183,22 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
         <button class="chip" type="button" data-f="tacc" aria-pressed="false">Sin gluten</button>
       </div>
       <div class="carta" id="lista">
-        <div class="bloque card reveal" data-cat="cafe"><h3>Café</h3><ul><li>Espresso, cortado y café con leche</li><li>Latte de vainilla</li><li>Latte de dulce de leche</li><li>Cappuccino</li></ul></div>
-        <div class="bloque card reveal" data-cat="dulce"><h3>Pastelería</h3><ul><li>Medialunas y croissants</li><li>Croissant de chocolate</li><li>Cheesecake de frutos rojos</li><li>Tortas <small>de chocolate, Oreo y más</small></li><li>Waffles <small>con frutos rojos, crema y chocolate</small></li></ul></div>
-        <div class="bloque card reveal" data-cat="comer"><h3>Para comer</h3><ul><li>Tostado de jamón y queso</li><li>Avocado toast con huevo</li><li>Tostadas y opciones saladas para el desayuno</li></ul></div>
-        <div class="bloque card reveal" data-cat="bebidas"><h3>Bebidas</h3><ul><li>Limonada</li><li>Jugo de naranja</li><li>Agua y gaseosas</li></ul></div>
-        <div class="bloque card reveal" data-cat="tacc dulce"><h3>Sin gluten <span class="tacc">Artesanal</span></h3><ul><li>Postres sin gluten, hechos en el local</li></ul></div>
+        <div class="bloque" data-cat="cafe"><h3>Café</h3><ul><li>Espresso, cortado y café con leche</li><li>Latte de vainilla</li><li>Latte de dulce de leche</li><li>Cappuccino</li></ul></div>
+        <div class="bloque" data-cat="dulce"><h3>Pastelería</h3><ul><li>Medialunas y croissants</li><li>Croissant de chocolate</li><li>Cheesecake de frutos rojos</li><li>Tortas <small>de chocolate, Oreo y más</small></li><li>Waffles <small>con frutos rojos, crema y chocolate</small></li></ul></div>
+        <div class="bloque" data-cat="comer"><h3>Para comer</h3><ul><li>Tostado de jamón y queso</li><li>Avocado toast con huevo</li><li>Tostadas y opciones saladas para el desayuno</li></ul></div>
+        <div class="bloque" data-cat="bebidas"><h3>Bebidas</h3><ul><li>Limonada</li><li>Jugo de naranja</li><li>Agua y gaseosas</li></ul></div>
+        <div class="bloque" data-cat="tacc dulce"><h3>Sin gluten <span class="tacc">Artesanal</span></h3><ul><li>Postres sin gluten, hechos en el local</li></ul></div>
       </div>
       <p class="aviso">Carta orientativa. Consultá en el local por la disponibilidad y los precios del día.</p>
-      <div class="acciones" style="margin-top:22px"><a class="btn" id="btn-carta" href="#" target="_blank" rel="noopener">Ver carta completa</a></div>
+      <a class="btn" id="btn-carta" href="#" target="_blank" rel="noopener">Ver carta completa</a>
     </div>
   </section>
 
   <section id="lugar">
     <div class="wrap lugar">
-      <img class="reveal" src="g5.jpg" alt="Taza de café sobre un plato, en una mesa de Gianno" loading="lazy">
-      <div class="reveal">
-        <span class="eyebrow">Un espacio cálido</span>
-        <h2>Para desconectar</h2>
+      <img src="g5.jpg" alt="Taza de café sobre un plato, en una mesa de Gianno" loading="lazy">
+      <div>
+        <h2>Un lugar para desconectar</h2>
         <p>Mesas con sol, plantas y buena música. Gianno es el lugar para venir a trabajar, charlar o no hacer nada.</p>
         <p>Cada día elaboramos pastelería artesanal y la acompañamos con café de especialidad, preparado al momento.</p>
         <p class="frase">Los días comienzan mejor con calma.</p>
@@ -245,19 +208,17 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
 
   <section id="videos" class="alt">
     <div class="wrap">
-      <span class="eyebrow reveal">Desde nuestro Instagram</span>
-      <h2 class="reveal">Mirá lo que pasa en Gianno</h2>
-      <p class="sub reveal">Tortas, café y novedades, directo de nuestras redes.</p>
+      <h2>Mirá lo que pasa en Gianno</h2>
+      <p class="sub">Tortas, café y novedades, directo de nuestro Instagram.</p>
       <div class="videos" id="videos-grid"></div>
     </div>
   </section>
 
-  <section id="visitanos">
+  <section id="visitanos" class="visita">
     <div class="wrap">
-      <span class="eyebrow reveal">Te esperamos</span>
-      <h2 class="reveal">Visitanos en Mataderos</h2>
+      <h2>Visitanos en Mataderos</h2>
       <div class="grid2">
-        <div class="reveal">
+        <div>
           <p class="direccion" id="direccion"></p>
           <ul class="horarios"><li><span>Todos los días</span><span id="horarios"></span></li></ul>
           <div class="acciones">
@@ -266,7 +227,7 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
             <a class="btn" id="link-wsp" href="#" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
-        <iframe class="mapa reveal" id="mapa" title="Mapa de Gianno Cafetería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe class="mapa" id="mapa" title="Mapa de Gianno Cafetería" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
@@ -274,8 +235,8 @@ iframe.mapa{height:270px}footer{padding-bottom:92px}
 
 <footer>
   <div class="wrap">
-    <span class="marca">GIANNO</span>
-    <span>Cafetería · Mataderos, CABA</span>
+    <b>Gianno Cafetería</b>
+    <span>Mataderos, CABA</span>
     <a id="pie-ig" href="#" target="_blank" rel="noopener"></a>
     <span>© 2026 Gianno Cafetería</span>
   </div>
@@ -313,9 +274,6 @@ const CONFIG = {
   else{$("link-wsp").style.display="none";$("wsp-flotante").style.display="none"}
   if(CONFIG.cartaUrl)$("btn-carta").href=CONFIG.cartaUrl;else $("btn-carta").style.display="none";
 
-  var t="";["Café de especialidad","Pastelería artesanal","Mataderos","Tu pausa favorita"].forEach(function(s){t+="<span>"+s+"</span><span>✦</span>"});
-  $("cinta").innerHTML=t+t+t+t;
-
   var g=$("videos-grid");
   if(CONFIG.videos.length){CONFIG.videos.forEach(function(v){var e;
     if(v.tipo==="ig"){e=document.createElement("iframe");e.src="https://www.instagram.com/reel/"+v.id+"/embed";e.title="Video de Instagram de Gianno";e.loading="lazy";e.allowFullscreen=true}
@@ -336,23 +294,14 @@ const CONFIG = {
   var chips=document.querySelectorAll(".chip"),bl=document.querySelectorAll(".bloque"),lista=$("lista");
   chips.forEach(function(c){c.addEventListener("click",function(){var f=c.getAttribute("data-f");
     chips.forEach(function(x){x.setAttribute("aria-pressed",x===c?"true":"false")});
-    bl.forEach(function(b){var ok=f==="todo"||(" "+b.getAttribute("data-cat")+" ").indexOf(" "+f+" ")>-1;b.hidden=!ok;if(ok)b.classList.add("in")});
+    bl.forEach(function(b){b.hidden=!(f==="todo"||(" "+b.getAttribute("data-cat")+" ").indexOf(" "+f+" ")>-1)});
     if(!reduce){lista.classList.remove("pop");void lista.offsetWidth;lista.classList.add("pop")}})});
 
-  var els=document.querySelectorAll(".reveal");
-  els.forEach(function(el){var sib=[].filter.call(el.parentNode.children,function(c){return c.classList.contains("reveal")});el.style.transitionDelay=Math.min(sib.indexOf(el),5)*80+"ms"});
   if("IntersectionObserver" in window){
-    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.12});
-    els.forEach(function(el){io.observe(el)});
     var links={};document.querySelectorAll("nav a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a});
     var so=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.remove("act")});if(links[x.target.id])links[x.target.id].classList.add("act")}})},{rootMargin:"-40% 0px -55% 0px"});
     Object.keys(links).forEach(function(k){var s=$(k);if(s)so.observe(s)});
-  }else els.forEach(function(el){el.classList.add("in")});
-
-  var bar=document.createElement("div");bar.className="progreso";document.body.appendChild(bar);
-  var hd=document.querySelector("header.top"),tk=false;
-  function sc(){var y=window.pageYOffset,h=root.scrollHeight-innerHeight;bar.style.setProperty("--p",h>0?Math.min(1,y/h).toFixed(4):0);hd.classList.toggle("sc",y>10);tk=false}
-  addEventListener("scroll",function(){if(!tk){tk=true;requestAnimationFrame(sc)}},{passive:true});sc();
+  }
 })();
 </script>
 </body>
